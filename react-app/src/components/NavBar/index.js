@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import logo from '../../images/logo.png'
 import './NavBar.css';
 
 import Modal from 'react-modal';
@@ -35,53 +36,13 @@ const NavBar = () => {
     // if (sessionUser && !errors) {
         return (
             <div className="navContainer">
-                {/* <a </a> */}
-                <div className="navLeft">
-                    <a className="anchor" href="/">
-                        {/* <img alt="logo" src={logo}></img> */}
-                    </a>
-                </div>
-                <div className="navRight">
-                    {/* <div className="addGroup">
-                        <Modal
-                            className="groupModal"
-                            style={style}
-                            isOpen={modalIsOpen}
-                        >
-                            <NewGroup />
-                            <button className="xButton" onClick={toggleModal}>
-                                x
-                            </button>
-                        </Modal>
-                        <div onClick={toggleModal}>Create New Group</div> */}
-                    {/* </div> */}
-                    <div className="logoutButton">
-                        <LogoutButton />
-                    </div>
+                <div className = 'logo'>
+                <a className="anchor" href="/">
+                        <img alt="logo" className = 'logo' src={logo}></img></a>
                 </div>
             </div>
-        );
-    // } else {
-    //     return (
-    //         <div className="navContainer">
-    //             <div className="navLeft">
-    //                 <a className="anchor" href="/">
-    //                     {/* <img alt="logo" src={logo}></img> */}
-    //                 </a>
-    //             </div>
-    //             <div className="navRight">
-    //                 <div className="logins">
-    //                     <NavLink to="/login">Log In</NavLink>
-    //                 </div>
-    //                 <div className="slash">|</div>
-    //                 <div className="signups">
-    //                     <NavLink to="/">Sign Up</NavLink>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     );
-    // }
-};
+        )
+}
 
 
 export default NavBar;

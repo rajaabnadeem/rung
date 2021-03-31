@@ -1,0 +1,10 @@
+.login__container {
+
+}
+
+.background__img {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    size: cover;
+}
