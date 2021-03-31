@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { login } from "../../services/auth";
+import { login } from "../../../store/session";
+import logo from '../../../images/truckart.jpeg'
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
   const [errors, setErrors] = useState([]);
@@ -30,6 +31,8 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   }
 
   return (
+    <div className = 'login__container'>
+        <img alt='backgroundimg' className = 'background_img' src = {logo}></img>
     <form onSubmit={onLogin}>
       <div>
         {errors.map((error) => (
@@ -58,6 +61,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
         <button type="submit">Login</button>
       </div>
     </form>
+    </div>
   );
 };
 
