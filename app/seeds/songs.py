@@ -1,11 +1,11 @@
-from werkzeug.security import generate_password_hash
-from app.models import db, User
+from app.models import db, Song
 
 # Adds a demo user, you can add other users here if you want
 
 
-def seed_users():
+def seed_songs():
 
+    song = Song(name='Song1', length='3:30', artist_id=1)
     demo = User(username='demo',
                 first_name='Demo',
                 last_name='User',

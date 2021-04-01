@@ -1,1 +1,15 @@
-/* TODO Add site wide styles */
+/* TODO Add site wide styles
+html {
+    background: url('./images/truckart.jpeg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap");
+* {
+  margin: 0;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: bolder;
+}

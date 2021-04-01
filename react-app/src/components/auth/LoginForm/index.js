@@ -1,14 +1,26 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-import { login } from "../../../store/session";
-import backgroundimg from '../../../images/truckart.jpeg'
+import React, { useState, useEffect } from "react";
+import { Redirect, useHistory, NavLink } from 'react-router-dom';
+import { login } from '../../../store/session'
+import { useDispatch } from 'react-redux';
+import * as sessionActions from '../../../store/session';
+import logo from '../../../images/logo.png'
+import './LoginForm.css'
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
-  const [errors, setErrors] = useState([]);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const onLogin = async (e) => {
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const [errors, setErrors] = useState([]);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+
+  function passwordToggle() {
+    setShowPassword(!showPassword);
+    }
+
+
+const onLogin = async (e) => {
     e.preventDefault();
     const user = await login(email, password);
     if (!user.errors) {
@@ -27,44 +39,70 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   };
 
   if (authenticated) {
-    return <Redirect to="/" />;
-  }
-
-  return (
-    <div className = 'login__container'>
-        <img alt='backgroundimg' className = 'background__img' src = {backgroundimg}></img>
-        <div className = 'form__containter'>
-            <form onSubmit={onLogin}>
-                <div>
-                    {errors.map((error) => (
-                    <div>{error}</div>
-                    ))}
+      history.push('/')
+    // return <Redirect to="/" />;
+  } else {
+    return (
+        <div className = 'container'>
+            <div className = 'content__container'>
+                <div className = 'left__content'>
+                    <div className = 'login__logo'>
+                        <a className="anchor" href="/">
+                            <img className = 'logo__img' src={logo}></img>
+                        </a>
+                    </div>
+                    <div className = 'form__container'>
+                        <form onSubmit={onLogin}>
+                            <div className="login-errors-container">
+                                <ul className="login-errors-list">
+                                    {errors &&
+                                        errors.map((error, idx) => (
+                                            <li key={idx}>{error}</li>
+                                        ))}
+                                </ul>
+                            </div>
+                            <div className="email-label-container">
+                                    <label className="email-label">Email address</label>
+                                </div>
+                                <div className="email-input-container">
+                                    <input
+                                        className="email-input"
+                                        name="email"
+                                        type="text"
+                                        value={email}
+                                        onChange={updateEmail}
+                                    />
+                                </div>
+                                <div className="password-label-container">
+                                    <label className="password-label">Password</label>
+                                </div>
+                                <div className="password-input-container">
+                                    <input
+                                        className="password-input"
+                                        name="password"
+                                        type={showPassword ? 'text' : 'password'}
+                                        value={password}
+                                        onChange={updatePassword}
+                                    />
+                                </div>
+                                <div className="show-password" onClick={passwordToggle}>
+                                    show password
+                                </div>
+                                <div className="login-button-container">
+                                    <button className="login-button" type="submit">
+                                        Log In
+                                    </button>
+                                </div>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <input
-                    name="email"
-                    type="text"
-                    placeholder="Email"
-                    value={email}
-                    onChange={updateEmail}
-                    />
+                <div className = 'right__content'>
+                RIGHT CONTENT
                 </div>
-                <div>
-                    <label htmlFor="password">Password</label>
-                    <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={updatePassword}
-                    />
-                    <button type="submit">Login</button>
-                </div>
-            </form>
         </div>
     </div>
-  );
-};
+    );
+    };
+}
 
 export default LoginForm;
