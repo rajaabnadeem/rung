@@ -5,13 +5,13 @@ from app.models import db, Song
 
 def seed_songs():
 
-    song = Song(name='Crack Rock', length=176, artist_id=1,
-                url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Crack+Rock.mp3')
-    song1 = Song(name='Pyramids', length=330, artist_id=1,
+    song1 = Song(name='Crack Rock', length=176, artist_id=1,
+                 url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Crack+Rock.mp3')
+    song2 = Song(name='Pyramids', length=330, artist_id=1,
                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Pyramids.mp3')
-    song2 = Song(name='Nights', length=307, artist_id=1,
+    song3 = Song(name='Nights', length=307, artist_id=1,
                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Nights.mp3')
-    song3 = Song(name='Pink + White', length=185, artist_id=1,
+    song4 = Song(name='Pink + White', length=185, artist_id=1,
                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Pink+%2B+White.mp3')
     song5 = Song(name='Self Control', length=250, artist_id=1,
                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Self+Control.mp3')
@@ -54,11 +54,10 @@ def seed_songs():
     song24 = Song(name='Waasta', length=329, artist_id=6,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Faris+Shafi+-+Waasta.mp3')
 
-    db.session.add(song)
     db.session.add(song1)
     db.session.add(song2)
     db.session.add(song3)
-    # db.session.add(song4)
+    db.session.add(song4)
     db.session.add(song5)
     db.session.add(song6)
     db.session.add(song7)

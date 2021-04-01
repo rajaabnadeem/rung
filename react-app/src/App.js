@@ -9,6 +9,8 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./store/session";
 import * as sessionActions from './store/session';
+import getSongs from './store/songs'
+import Home from './components/Home'
 
 function App() {
   const dispatch = useDispatch()
@@ -18,13 +20,17 @@ function App() {
   useEffect(() => {
     (async() => {
       const user = await dispatch(authenticate());
-      console.log(user)
       if (!user.errors) {
         setAuthenticated(true);
       }
       setLoaded(true);
+      // dispatch(getSongs())
     })();
   }, [setAuthenticated, dispatch]);
+
+  useEffect(async () => {
+    await dispatch(getSongs())
+  }, [])
 
 if (!loaded) {
     return null;
@@ -56,6 +62,7 @@ if (!loaded) {
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true} authenticated={authenticated} setAuthenticated={setAuthenticated}>
           <h1>My Home Page</h1>
+          <Home />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

@@ -32,12 +32,12 @@ class User(db.Model, UserMixin):
 
     def to_dict(self):
         return {
-            'id': self.id,
-            'first_name': self.first_name,
-            'last_name': self.last_name,
-            'username': self.username,
-            'email': self.email,
-            'hashed_password': self.hashed_password
+            "id": self.id,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "username": self.username,
+            "email": self.email,
+            "hashed_password": self.hashed_password
         }
 
 
@@ -57,6 +57,15 @@ class Song(db.Model):
     artist = db.relationship('Artist', back_populates='songs')
     album = db.relationship('Album', uselist=False, back_populates='songs')
 
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "length": self.length,
+            "url": self.url,
+            "artist_id": self.artist_id,
+            "album_id": self.album_id
+        }
 
 # class UserSong(db.Model):
 #     __tablename__ = 'user_songs'
@@ -79,6 +88,14 @@ class Artist(db.Model):
 
     songs = db.relationship('Song', back_populates='artist')
 
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "img": self.img,
+            "bio": self.bio,
+        }
+
 
 class Album(db.Model):
     __tablename__ = 'albums'
@@ -89,6 +106,14 @@ class Album(db.Model):
     album_art = db.Column(db.String(999), nullable=True)
 
     songs = db.relationship('Song', back_populates='album')
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "length": self.length,
+            "album_art": self.album_art,
+        }
 
 
 class Playlist(db.Model):
@@ -104,6 +129,15 @@ class Playlist(db.Model):
     # songs = db.relationship('Song', secondary='song_playlists',
     # back_populates='playlists')
 
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "img": self.img,
+            "description": self.description,
+            "user_id": self.user_id,
+        }
+
 
 class SongPlaylist(db.Model):
     __tablename__ = 'song_playlists'
@@ -114,3 +148,10 @@ class SongPlaylist(db.Model):
 
     songs = db.relationship('Song', backref=db.backref('songs'))
     playlists = db.relationship('Playlist', backref=db.backref('playlists'))
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "song_id": self.song_id,
+            "playlist_id": self.playlist_id,
+        }
