@@ -13,11 +13,13 @@ export const removeUser = () => ({
 export const authenticate = () => async (dispatch) => {
     const response = await fetch('/api/auth/');
     const data = await response.json();
-    return dispatch(setUser(data));
+    dispatch(setUser(data));
+    return data
 };
 
 export const login = (user) => async (dispatch) => {
     const { email, password } = user;
+    console.log(user)
     const response = await fetch('/api/auth/login/', {
         method: 'POST',
         headers: {
@@ -29,7 +31,8 @@ export const login = (user) => async (dispatch) => {
         }),
     });
     const data = await response.json();
-    return dispatch(setUser(data));
+    dispatch(setUser(data));
+    return data
 };
 
 export const logout = () => async (dispatch) => {

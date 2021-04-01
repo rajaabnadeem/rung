@@ -15,7 +15,8 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
 
-    # songs = db.relationship('Song', secondary='user_songs', back_populates='user')
+    # songs = db.relationship('Song', secondary='user_songs',
+    #  back_populates='user')
     playlists = db.relationship('Playlist', backref='users')
 
     @property
@@ -45,12 +46,14 @@ class Song(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), nullable=False)
-    length = db.Column(db.Time, nullable=False)
+    length = db.Column(db.Integer, nullable=False)
+    url = db.Column(db.String(1000), nullable=False)
     artist_id = db.Column(db.Integer, db.ForeignKey('artists.id'))
     album_id = db.Column(db.Integer, db.ForeignKey('albums.id'))
 
     # users = db.relationship('User', secondary='user_songs')
-    playlists = db.relationship('Playlist', secondary='song_playlists', backref='songs')
+    playlists = db.relationship('Playlist', secondary='song_playlists',
+                                backref='songs')
     artist = db.relationship('Artist', back_populates='songs')
     album = db.relationship('Album', uselist=False, back_populates='songs')
 
@@ -72,7 +75,7 @@ class Artist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), nullable=False)
     img = db.Column(db.String(999), nullable=True)
-    bio = db.Column(db.String(999), nullable=False)
+    bio = db.Column(db.String(999), nullable=True)
 
     songs = db.relationship('Song', back_populates='artist')
 
@@ -82,7 +85,7 @@ class Album(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, nullable=True)
     name = db.Column(db.String(20), nullable=False)
-    length = db.Column(db.Time, nullable=True)
+    length = db.Column(db.Integer, nullable=True)
     album_art = db.Column(db.String(999), nullable=True)
 
     songs = db.relationship('Song', back_populates='album')
@@ -98,7 +101,8 @@ class Playlist(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     # users = db.relationship('User', back_populates='playlists')
-    # songs = db.relationship('Song', secondary='song_playlists', back_populates='playlists')
+    # songs = db.relationship('Song', secondary='song_playlists',
+    # back_populates='playlists')
 
 
 class SongPlaylist(db.Model):

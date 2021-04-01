@@ -5,17 +5,25 @@ from app.models import db, Artist
 
 def seed_artists():
 
-    artist = Artist(name='Frank Ocean')
-    artist2 = Artist(name='Shamoon Ismail')
-    artist3 = Artist(name='Strings')
-    artist4 = Artist(name='Noori')
-    artist5 = Artist(name='Ali Sethi')
+    artist = Artist(name='Frank Ocean',
+                    img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/frankocean.JPG')
+    artist2 = Artist(name='Shamoon Ismail',
+                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/shamoon.jpeg')
+    artist3 = Artist(
+        name='Strings', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/strings.jpeg')
+    artist4 = Artist(
+        name='Noori', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/noori.jpeg')
+    artist5 = Artist(
+        name='Ali Sethi', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/alisethi.jpeg')
+    artist6 = Artist(name='Faris Shafi',
+                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/farisshafi.jpeg')
 
     db.session.add(artist)
     db.session.add(artist2)
     db.session.add(artist3)
     db.session.add(artist4)
     db.session.add(artist5)
+    db.session.add(artist6)
 
     db.session.commit()
 

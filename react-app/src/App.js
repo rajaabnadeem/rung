@@ -11,33 +11,35 @@ import { authenticate } from "./store/session";
 import * as sessionActions from './store/session';
 
 function App() {
-  const dispatch = useDispatch();
-  const [path, setPath] = useState('');
+  const dispatch = useDispatch()
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const user = authenticate();
-    if (!user.errors) {
-        // dispatch(sessionActions.restoreUser());
+    (async() => {
+      const user = await dispatch(authenticate());
+      console.log(user)
+      if (!user.errors) {
         setAuthenticated(true);
-    }
-    setLoaded(true);
-});
+      }
+      setLoaded(true);
+    })();
+  }, [setAuthenticated, dispatch]);
 
 if (!loaded) {
     return null;
 }
 
-
   return (
-    <>
+    <BrowserRouter>
       <NavBar
             authenticated={authenticated}
             setAuthenticated={setAuthenticated}
       />
       <Switch>
-        <Route path="/login" exact={true}>
+        <Route path="/login" exact={true}
+             authenticated={authenticated}
+             setAuthenticated={setAuthenticated}>
           <LoginForm
             authenticated={authenticated}
             setAuthenticated={setAuthenticated}
@@ -56,7 +58,7 @@ if (!loaded) {
           <h1>My Home Page</h1>
         </ProtectedRoute>
       </Switch>
-    </>
+    </BrowserRouter>
   );
 }
 

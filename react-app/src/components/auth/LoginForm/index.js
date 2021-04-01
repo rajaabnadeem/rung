@@ -22,7 +22,8 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
 const onLogin = async (e) => {
     e.preventDefault();
-    const user = await login(email, password);
+    // console.log('==============')
+    const user = await dispatch(login({email, password}));
     if (!user.errors) {
       setAuthenticated(true);
     } else {
@@ -39,8 +40,8 @@ const onLogin = async (e) => {
   };
 
   if (authenticated) {
-      history.push('/')
-    // return <Redirect to="/" />;
+    //   return history.push('/')
+    return <Redirect to="/" />;
   } else {
     return (
         <div className = 'container'>
