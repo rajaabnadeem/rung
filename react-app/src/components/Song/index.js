@@ -11,7 +11,8 @@ const Song = () => {
             { state.map(song => (
                 <div className = 'single__song'>
                     <div className = 'name'>
-                        <a href={song.url}>{song.name}</a>
+                        <div>{song.name}</div>
+                        <audio controls src={song.url}>{song.name}</audio>
                     </div>
                     <div className = 'artist'>{song.artist_id}</div>
                     <div className = 'length'>{song.length}</div>
