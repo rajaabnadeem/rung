@@ -44,7 +44,7 @@ const onLogin = async (e) => {
     return <Redirect to="/" />;
   } else {
     return (
-        <div className = 'container'>
+        <div className = 'container__login'>
             <div className = 'content__container'>
                 <div className = 'left__content'>
                     <div className = 'login__logo'>

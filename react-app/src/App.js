@@ -8,9 +8,11 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./store/session";
-import * as sessionActions from './store/session';
-import getSongs from './store/songs'
 import Home from './components/Home'
+import Song from './components/Song'
+import * as songActions from './store/songs'
+import * as artistActions from './store/artists'
+
 
 function App() {
   const dispatch = useDispatch()
@@ -24,13 +26,15 @@ function App() {
         setAuthenticated(true);
       }
       setLoaded(true);
-      // dispatch(getSongs())
+      dispatch(songActions.getSongs())
+      dispatch(artistActions.getArtists())
+
     })();
   }, [setAuthenticated, dispatch]);
 
-  useEffect(async () => {
-    await dispatch(getSongs())
-  }, [])
+  // useEffect(async () => {
+  //   await dispatch(getSongs())
+  // }, [])
 
 if (!loaded) {
     return null;
@@ -61,7 +65,6 @@ if (!loaded) {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true} authenticated={authenticated} setAuthenticated={setAuthenticated}>
-          <h1>My Home Page</h1>
           <Home />
         </ProtectedRoute>
       </Switch>

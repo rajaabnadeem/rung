@@ -1,0 +1,32 @@
+/* .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container__left {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  flex: 30%;
+  padding: 500px;
+  background-color: aqua;
+}
+
+.container__right {
+  display: flex;
+  flex: 70%;
+  flex-direction: column;
+  float: right;
+} */
+
+.container {
+  display: flex;
+}
+
+.container__left {
+  flex: 25%;
+}
+
+.container__right {
+  flex: 75%;
+}
