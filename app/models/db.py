@@ -54,7 +54,7 @@ class Song(db.Model):
     # users = db.relationship('User', secondary='user_songs')
     playlists = db.relationship('Playlist', secondary='song_playlists',
                                 backref='songs')
-    artist = db.relationship('Artist', back_populates='songs')
+    artist = db.relationship('Artist', uselist=False, back_populates='songs')
     album = db.relationship('Album', uselist=False, back_populates='songs')
 
     def to_dict(self):
