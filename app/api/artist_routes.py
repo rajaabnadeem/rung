@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, jsonify
 from app.models import db, Song, Artist
 from flask_login import login_required
 
@@ -16,15 +16,9 @@ def getArtists():
 
 @artist_routes.route('/<int:artist_id>')
 def singleArtist(artist_id):
-    artistSongs = Artist.query.all()
-    artistDict = {}
-    for artistSong in artistSongs:
-        songs = artist.
-
-    songs = Song.query.all()
-    songDict = {}
-    for song in songs:
-        artist = song.artist.name
-        songDict[song.id] = song.to_dict()
-        songDict[song.id]['artist_name'] = artist
-    return songDict
+    artists_data = Artist.query.filter(Artist.id == artist_id)
+    artistSongs = {}
+    for artist_data in artists_data:
+        for artist_data.song in artist_data.songs:
+            artistSongs[artist_data.song.id] = artist_data.to_dict()
+    return artistSongs
