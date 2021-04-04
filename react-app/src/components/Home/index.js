@@ -8,6 +8,9 @@ import './Home.css'
 const Home = () => {
 
     const dispatch = useDispatch()
+    const artists = useSelector(state => Object.values(state.artists))
+    console.log(artists)
+    // const artist = useSelector(state => state.artists)
 
     return (
         <div className = 'container'>
@@ -15,7 +18,20 @@ const Home = () => {
                 <Artists />
             </div>
             <div className = 'container__right'>
-                <div className = 'content__header'> Name, Artist,
+                <div className = 'artist__container'>
+                    <div className = 'artist__header'> Check out your favorite artists
+                    </div>
+                    <div className = 'artist__info'>
+                        {artists.map(artist => (
+                            <a href = {`artists/${artist.id}`} className = 'single__artist'>
+                                <div className = 'artist__img'>
+                                    <img src = {artist.img}></img>
+                                </div>{artist.name}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+                <div className = 'content__header'> Browse Today's Hits
                     <div>
                         <Song />
                     </div>

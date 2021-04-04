@@ -9,10 +9,10 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./store/session";
 import Home from './components/Home'
-import Song from './components/Song'
+import ArtistPage from "./components/ArtistPage";
 import * as songActions from './store/songs'
 import * as artistActions from './store/artists'
-
+import * as artistPageActions from './store/artists'
 
 function App() {
   const dispatch = useDispatch()
@@ -28,6 +28,7 @@ function App() {
       setLoaded(true);
       dispatch(songActions.getSongs())
       dispatch(artistActions.getArtists())
+      dispatch(artistPageActions.getArtistSongs())
 
     })();
   }, [setAuthenticated, dispatch]);
@@ -64,6 +65,9 @@ if (!loaded) {
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
+        <ProtectedRoute path='/artists' exact={true} authenticated={authenticated}>
+          <ArtistPage />
+          </ProtectedRoute>
         <ProtectedRoute path="/" exact={true} authenticated={authenticated} setAuthenticated={setAuthenticated}>
           <Home />
         </ProtectedRoute>
