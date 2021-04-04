@@ -3,10 +3,23 @@
   flex-direction: row;
   box-sizing: border-box;
   border: 1px solid white;
+  justify-content: space-between;
 }
 
 .name,
 .artist,
-.length {
+.length,
+.id {
   padding: 10px;
+}
+
+.length {
+  justify-content: end;
+}
+.id {
+  /* margin-right: -200px; */
+}
+
+.song__container {
+  justify-content: space-between;
 }

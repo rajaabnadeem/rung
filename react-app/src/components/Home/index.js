@@ -7,14 +7,12 @@ import './Home.css'
 
 const Home = () => {
 
-    const dispatch = useDispatch()
     const artists = useSelector(state => Object.values(state.artists))
-    console.log(artists)
     // const artist = useSelector(state => state.artists)
 
     return (
         <div className = 'container'>
-            <div className = 'container__left'>
+            <div className = 'container__left'>Artists
                 <Artists />
             </div>
             <div className = 'container__right'>
@@ -31,11 +29,17 @@ const Home = () => {
                         ))}
                     </div>
                 </div>
-                <div className = 'content__header'> Browse Today's Hits
+                <div className = 'content__header'> Browse Today's Hits </div>
+                <div className = 'navbar__song'>
+                    <div className = 'song__id'>#</div>
+                    <div className = 'song__name'>Name</div>
+                    <div className = 'song__artist'>Artist</div>
+                    <div className = 'song__length'>Length</div>
+                </div>
+
                     <div>
                         <Song />
                     </div>
-                </div>
             </div>
         </div>
     )
