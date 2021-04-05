@@ -14,3 +14,8 @@ def getSongs():
         songDict[song.id] = song.to_dict()
         songDict[song.id]['artist_name'] = artist
     return songDict
+
+
+# @song.routes.route('/<int:artist_id>')
+# def getArtistSongs(artist_id):
+#     songs =

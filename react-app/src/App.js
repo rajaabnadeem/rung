@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
@@ -10,10 +10,12 @@ import User from "./components/User";
 import { authenticate } from "./store/session";
 import Home from './components/Home'
 import ArtistPage from "./components/ArtistPage";
-import Artists from './components/Artists'
+import Artists from './components/Artists';
+import Player from './components/Player'
 import * as songActions from './store/songs'
 import * as artistActions from './store/artists'
 import * as artistPageActions from './store/artists'
+
 
 function App() {
   const dispatch = useDispatch()
@@ -21,6 +23,10 @@ function App() {
   const [loaded, setLoaded] = useState(false);
 
   const artists = useSelector(state => Object.values(state.artists))
+  const {artist_id} = useParams()
+
+  const [currentSong, setCurrentSong] = useState(null)
+  const [q, setQ] = useState([])
 
   useEffect(() => {
     (async() => {
@@ -31,14 +37,9 @@ function App() {
       setLoaded(true);
       dispatch(songActions.getSongs())
       dispatch(artistActions.getArtists())
-      dispatch(artistPageActions.getArtistSongs())
-
+      // dispatch(artistPageActions.getArtistSongs(artist_id))
     })();
   }, [setAuthenticated, dispatch]);
-
-  // useEffect(async () => {
-  //   await dispatch(getSongs())
-  // }, [])
 
 if (!loaded) {
     return null;
@@ -66,18 +67,28 @@ if (!loaded) {
                authenticated={authenticated}
               setAuthenticated={setAuthenticated} />
         </Route>
-        <Route path = {`artists/${artists.id}`}
-               exact={true}
-               authenticated={authenticated}>
-          <Artists />
-        </Route>
-        <Route path="/"
-               exact={true}
-               authenticated={authenticated}
-               setAuthenticated={setAuthenticated}>
-          <Home />
-        </Route>
+
+          <ProtectedRoute path = {`/artists/:artist_id`}
+                exact={true}
+                authenticated={authenticated}
+                currentSong = {currentSong}
+                setCurrentSong = {setCurrentSong}>
+            <ArtistPage />
+          </ProtectedRoute>
+          <ProtectedRoute path="/"
+                exact={true}
+                authenticated={authenticated}
+                setAuthenticated={setAuthenticated}
+                >
+            <Home
+                currentSong = {currentSong}
+                setCurrentSong = {setCurrentSong}/>
+          </ProtectedRoute>
       </Switch>
+      <Player currentSong = {currentSong}
+              setCurrentSong = {setCurrentSong}
+              q = {q}
+              setQ = {setQ}/>
     </BrowserRouter>
   );
 }

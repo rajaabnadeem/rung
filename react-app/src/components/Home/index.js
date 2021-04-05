@@ -6,10 +6,9 @@ import Artists from '../Artists'
 import ArtistPage from "../ArtistPage";
 import './Home.css'
 
-const Home = () => {
+const Home = ({currentSong, setCurrentSong}) => {
 
     const artists = useSelector(state => Object.values(state.artists))
-    // const artist = useSelector(state => state.artists)
 
     return (
         <div className = 'container'>
@@ -39,7 +38,8 @@ const Home = () => {
                     <div className = 'song__artist'>Artist</div>
                     <div className = 'song__length'>Length</div>
                 </div>
-                    <Song />
+                    <Song currentSong = {currentSong}
+                         setCurrentSong = {setCurrentSong} />
                 </div>
         </div>
     )

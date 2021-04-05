@@ -1,21 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import AppContext from '../../App'
 import './Song.css'
 
-const Song = () => {
+const Song = ({currentSong, setCurrentSong}) => {
 
     const state = useSelector(state => Object.values(state.songs))
 
-    const handleClick = (song_url) => {
-        let audio = new Audio(song_url)
+    const handleClick = ( song ) => {
+        if (currentSong) {song.pause()}
+        let audio = new Audio(song.url)
+        setCurrentSong({ ...song, audio })
         audio.play()
+
     }
 
 
     return (
         <div className = 'song__container'>
             { state.map(song => (
-                <div onClick={() => handleClick(song.url)} className = 'single__song'>
+                <div onClick={() => handleClick(song)} className = 'single__song'>
                     <div className ='id'>{song.id}</div>
                     <div className = 'name'>{song.name}
                         {/* <audio controls src={song.url}>{song.name}</audio> */}
