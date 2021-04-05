@@ -14,7 +14,7 @@ def getArtists():
     return artistDict
 
 
-@artist_routes.route('/<int:artist_id>')
+@artist_routes.route('/')
 def singleArtist(artist_id):
     artists_data = Artist.query.filter(Artist.id == artist_id)
     artistSongs = {}

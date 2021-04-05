@@ -18,7 +18,7 @@ export const getArtists = () => async (dispatch) => {
 }
 
 export const getArtistSongs = () => async (dispatch) => {
-    const response = await fetch('api/artists/<artist_id>')
+    const response = await fetch(`api/artists/<int:artist_id`)
     const data = await response.json()
     dispatch (loadArtistSongs(data))
 }

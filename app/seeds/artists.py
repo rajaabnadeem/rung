@@ -6,17 +6,24 @@ from app.models import db, Artist
 def seed_artists():
 
     artist = Artist(name='Frank Ocean',
-                    img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/frankocean.JPG')
+                    img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/frankocean.JPG',
+                    banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/frank.jpeg')
     artist2 = Artist(name='Shamoon Ismail',
-                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/shamoon.jpeg')
-    artist3 = Artist(
-        name='Strings', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/strings.jpeg')
+                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/shamoon.jpeg',
+                     banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/shamoon.jpeg')
+    artist3 = Artist(name='Strings',
+                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/strings.jpeg',
+                     banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/strings.jpeg')
     artist4 = Artist(
-        name='Noori', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/noori.jpeg')
-    artist5 = Artist(
-        name='Ali Sethi', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/alisethi.jpeg')
+        name='Noori',
+        img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/noori.jpeg',
+        banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/noori.jpeg')
+    artist5 = Artist(name='Ali Sethi',
+                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/alisethi.jpeg',
+                     banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/alisethi.jpeg')
     artist6 = Artist(name='Faris Shafi',
-                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/farisshafi.jpeg')
+                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/farisshafi.jpeg',
+                     banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/faris.jpeg')
 
     db.session.add(artist)
     db.session.add(artist2)

@@ -16,9 +16,6 @@
 .length {
   justify-content: end;
 }
-.id {
-  /* margin-right: -200px; */
-}
 
 .song__container {
   justify-content: space-between;

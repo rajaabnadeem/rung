@@ -7,13 +7,12 @@ const Artists = () => {
     const state = useSelector(state => Object.values(state.artists))
 
     return (
-        <div>
+        <div className = 'artists__container'>
             { state.map(artist => (
-                <div className = 'single__artist'>
-                    <div className = 'name'>
-                        <div>{artist.name}</div>
-                    </div>
-                    <div className = 'artist'>{artist.artist_id}</div>
+                <div className = 'single_artist__container'>
+                    <a className = 'artist__banner' href = {`artists/${artist.id}`}>
+                        <img className ="banner__img" src = {artist.banner} />{artist.name}
+                    </a>
                 </div>
             ))}
         </div>

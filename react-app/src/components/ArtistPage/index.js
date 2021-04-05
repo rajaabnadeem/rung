@@ -6,19 +6,8 @@ const ArtistPage = () => {
 
     const state = useSelector(state => Object.values(state.artists))
 
-
     return (
-        <div>
-            { state.map(artist => (
-                <div className = 'single__song'>
-                    <div className = 'name'>
-                        <div>{artist.name}</div>
-                        <div>{artist.img}</div>
-                        {/* <audio controls src={song.url}>{song.name}</audio> */}
-                    </div>
-                </div>
-            ))}
-        </div>
+      <h1> HELLO </h1>
     )
 }
 

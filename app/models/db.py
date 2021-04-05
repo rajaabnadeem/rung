@@ -85,6 +85,7 @@ class Artist(db.Model):
     name = db.Column(db.String(20), nullable=False)
     img = db.Column(db.String(999), nullable=True)
     bio = db.Column(db.String(999), nullable=True)
+    banner = db.Column(db.String(999), nullable=True)
 
     songs = db.relationship('Song', back_populates='artist')
 
@@ -94,6 +95,7 @@ class Artist(db.Model):
             "name": self.name,
             "img": self.img,
             "bio": self.bio,
+            "banner": self.banner
         }
 
 

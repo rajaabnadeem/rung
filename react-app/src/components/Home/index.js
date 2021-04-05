@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSongs } from '../../store/songs'
 import Song from '../Song'
 import Artists from '../Artists'
+import ArtistPage from "../ArtistPage";
 import './Home.css'
 
 const Home = () => {
@@ -13,7 +14,9 @@ const Home = () => {
     return (
         <div className = 'container'>
             <div className = 'container__left'>Artists
-                <Artists />
+            <a href = {`artists/${artists.id}`}>
+                <Artists/>
+                </a>
             </div>
             <div className = 'container__right'>
                 <div className = 'artist__container'>
@@ -36,11 +39,8 @@ const Home = () => {
                     <div className = 'song__artist'>Artist</div>
                     <div className = 'song__length'>Length</div>
                 </div>
-
-                    <div>
-                        <Song />
-                    </div>
-            </div>
+                    <Song />
+                </div>
         </div>
     )
 }
