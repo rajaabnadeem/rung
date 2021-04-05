@@ -9,7 +9,7 @@ export const getSongs = () => async (dispatch) => {
     const response = await fetch('/api/songs/')
     const data = await response.json()
     dispatch(loadSongs(data))
-
+    return data
 }
 
 const initialState = {}

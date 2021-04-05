@@ -25,8 +25,8 @@ function App() {
   const artists = useSelector(state => Object.values(state.artists))
   const {artist_id} = useParams()
 
-  const [currentSong, setCurrentSong] = useState(null)
-  const [q, setQ] = useState([])
+  // const [currentSong, setCurrentSong] = useState(null)
+  const [q, setQ] = useState({})
 
   useEffect(() => {
     (async() => {
@@ -35,7 +35,8 @@ function App() {
         setAuthenticated(true);
       }
       setLoaded(true);
-      dispatch(songActions.getSongs())
+      const songs = await dispatch(songActions.getSongs())
+      setQ({...songs, currentSong: null})
       dispatch(artistActions.getArtists())
       // dispatch(artistPageActions.getArtistSongs(artist_id))
     })();
@@ -67,13 +68,13 @@ if (!loaded) {
                authenticated={authenticated}
               setAuthenticated={setAuthenticated} />
         </Route>
-
           <ProtectedRoute path = {`/artists/:artist_id`}
                 exact={true}
                 authenticated={authenticated}
-                currentSong = {currentSong}
-                setCurrentSong = {setCurrentSong}>
-            <ArtistPage />
+               >
+            <ArtistPage
+              q = {q}
+              setQ = {setQ}/>
           </ProtectedRoute>
           <ProtectedRoute path="/"
                 exact={true}
@@ -81,12 +82,11 @@ if (!loaded) {
                 setAuthenticated={setAuthenticated}
                 >
             <Home
-                currentSong = {currentSong}
-                setCurrentSong = {setCurrentSong}/>
+                q = {q}
+                setQ = {setQ}/>
           </ProtectedRoute>
       </Switch>
-      <Player currentSong = {currentSong}
-              setCurrentSong = {setCurrentSong}
+      <Player
               q = {q}
               setQ = {setQ}/>
     </BrowserRouter>

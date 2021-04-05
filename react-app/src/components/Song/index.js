@@ -3,14 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import AppContext from '../../App'
 import './Song.css'
 
-const Song = ({currentSong, setCurrentSong}) => {
+const Song = ({q, setQ}) => {
 
     const state = useSelector(state => Object.values(state.songs))
 
-    const handleClick = ( song ) => {
-        if (currentSong) {song.pause()}
-        let audio = new Audio(song.url)
-        setCurrentSong({ ...song, audio })
+    const handleClick = ( currentSong ) => {
+        const currentId = currentSong.id
+        if (q.currentSong) {q.currentSong.audio.pause()}
+        let audio = new Audio(currentSong.url)
+        setQ({ ...q, currentSong: {currentId, audio}, isPlaying:true })
         audio.play()
 
     }
