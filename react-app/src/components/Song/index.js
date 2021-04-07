@@ -22,10 +22,12 @@ const Song = ({q, setQ}) => {
                 <div onClick={() => play(song)} className = 'single__song'>
                     <div className ='id'>{song.id}</div>
                     <div className = 'name'>{song.name}
-                        {/* <audio controls src={song.url}>{song.name}</audio> */}
                     </div>
                     <div className = 'artist'>{song.artist_name}</div>
-                    <div className = 'length'>{song.length}</div>
+                    <div className = 'duration'>
+                    { Math.floor(song.length / 60) + ': ' +
+                     (Math.floor(Math.floor(song.length)) - (Math.floor(song.length / 60)) * 60) }
+                </div>
                 </div>
             ))}
         </div>

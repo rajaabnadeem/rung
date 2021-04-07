@@ -1,12 +1,12 @@
 .container {
   display: flex;
-  background-color: gray;
+  background-color: rgb(35, 35, 35);
   color: white;
 }
 
 .container__left {
   flex: 23%;
-  background-color: darkgray;
+  background-color: rgb(240, 240, 240);
 }
 
 .container__right {
