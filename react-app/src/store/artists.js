@@ -1,5 +1,6 @@
 const LOAD_ARTISTS = 'artist/loadArtists'
 const LOAD_ARTIST_SONGS = 'artist/loadArtistSongs'
+const LOAD_ARTIST_DATA = 'artist/loadArtistData'
 
 export const loadArtists = (artists) => ({
     type: LOAD_ARTISTS,
@@ -11,27 +12,39 @@ export const loadArtistSongs = (artistSongs) => ({
     artistSongs,
 })
 
-export const getArtists = () => async (dispatch) => {
+export const loadArtistData = (artistData) => ({
+    type: LOAD_ARTIST_DATA,
+    artistData
+})
+
+export const getAllArtists = () => async (dispatch) => {
     const response = await fetch('/api/artists/')
     const data = await response.json()
     dispatch(loadArtists(data))
 }
 
 export const getArtistSongs = ({artist_id}) => async (dispatch) => {
-    const response = await fetch(`/api/artists/${artist_id}`)
+    const response = await fetch(`/api/artists/${artist_id}/songs`)
     const data = await response.json()
     dispatch (loadArtistSongs(data))
-    console.log(data)
 }
-const initialState = {}
 
+export const getArtistData = ({artist_id}) => async (dispatch) => {
+    const response = await fetch(`/api/artists/${artist_id}`)
+    const data = await response.json()
+    dispatch (loadArtistData(data))
+}
+
+const initialState = {}
 
 const artistsReducer = (state = initialState, action) => {
         switch (action.type) {
             case LOAD_ARTISTS:
-                return  { ...state, ...action.artists }
+                return  { ...state, allArtists: action.artists }
             case LOAD_ARTIST_SONGS:
-                return { ...state, ...action.artistSongs }
+                return { ...state, songs: action.artistSongs }
+            case LOAD_ARTIST_DATA:
+                return { ...state, artistData: action.artistData}
             default:
                 return state
         }

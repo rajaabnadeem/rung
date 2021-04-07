@@ -14,11 +14,21 @@ def getArtists():
     return artistDict
 
 
-@artist_routes.route('/<int:artist_id>')
-def singleArtist(artist_id):
+@artist_routes.route('/<int:artist_id>/songs')
+def getArtistSongs(artist_id):
     artists_data = Artist.query.filter(Artist.id == artist_id)
     artistSongs = {}
     for artist_data in artists_data:
         for artist_data.song in artist_data.songs:
             artistSongs[artist_data.song.id] = artist_data.song.to_dict()
+            # artistSongs[artist_data.id] = artist_data.to_dict()
     return artistSongs
+
+
+@artist_routes.route('/<int:artist_id>/')
+def getArtistData(artist_id):
+    artists_data = Artist.query.filter(Artist.id == artist_id)
+    artistData = {}
+    for artist_data in artists_data:
+        artistData = artist_data.to_dict()
+    return artistData

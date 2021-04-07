@@ -37,7 +37,7 @@ function App() {
       setLoaded(true);
       const songs = await dispatch(songActions.getSongs())
       setQ({...songs, currentSong: null})
-      dispatch(artistActions.getArtists())
+      dispatch(artistActions.getAllArtists())
       // dispatch(artistPageActions.getArtistSongs(artist_id))
     })();
   }, [setAuthenticated, dispatch]);

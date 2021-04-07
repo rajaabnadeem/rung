@@ -16,6 +16,15 @@ def getSongs():
     return songDict
 
 
+# @artist_routes.route('/<int:artist_id>')
+# def getArtistSongs(artist_id):
+#     artists_data = Artist.query.filter(Artist.id == artist_id)
+#     artistSongs = {}
+#     for artist_data in artists_data:
+#         for artist_data.song in artist_data.songs:
+#             artistSongs[artist_data.song.id] = artist_data.song.to_dict()
+#     return artistSongs
+
 # @song.routes.route('/<int:artist_id>')
 # def getArtistSongs(artist_id):
 #     songs =

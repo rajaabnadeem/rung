@@ -5,17 +5,25 @@ import * as artistPageActions from '../../store/artists'
 
 import './ArtistPage.css'
 
-const ArtistPage = () => {
+const ArtistPage = ({}) => {
 
     const dispatch = useDispatch()
     const artist_id = useParams()
 
     useEffect(() => {
         dispatch(artistPageActions.getArtistSongs(artist_id))
+        dispatch(artistPageActions.getArtistData(artist_id))
     }, [])
 
+    const artist = useSelector(state => (state?.artists?.artistData))
+    console.log('artist:', artist)
     return (
-      <h1> HELLO </h1>
+      <div>
+        {/* {artist.name} */}
+        {/* <div>{artist.artistData.name}</div> */}
+
+      </div>
+      // <div>{artist}</div>
     )
 }
 
