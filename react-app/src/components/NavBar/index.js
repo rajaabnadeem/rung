@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../../images/logo.png'
 import LogoutButton from '../../components/auth/LogoutButton';
 import './NavBar.css';
@@ -10,7 +10,7 @@ if (authenticated) {
         <div className="navContainer">
             <div className = 'navbar__logo'>
                 <a className="anchor" href="/">
-                <img className = 'navbar__logo' src={logo}></img></a>
+                <img alt = 'logo' className = 'navbar__logo' src={logo}></img></a>
             </div>
                 { authenticated &&
                 <LogoutButton setAuthenticated={setAuthenticated}/>
@@ -22,7 +22,7 @@ if (authenticated) {
         <div className="navContainer">
             <div className = 'navbar__logo'>
                 <a className="anchor" href="/">
-                <img className = 'navbar__logo' src={logo}></img></a>
+                <img alt='logo' className = 'navbar__logo' src={logo}></img></a>
             </div>
         </div>
         )

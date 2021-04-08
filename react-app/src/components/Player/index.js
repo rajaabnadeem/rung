@@ -1,18 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react'
 import './Player.css'
 
 const Player = ({q, setQ}) => {
 
-    const state = useSelector(state => state.songs)
     const [volume, setVolume] = useState(0.7)
     const [muted, setMuted] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)
-    const [trackProgress] = useState(0)
-    const [pauseActive, setPauseActive] = useState(true)
 
-
-    const togglePause = () => setPauseActive(!pauseActive)
 
     const play = ( currentSong ) => {
         const currentId = currentSong.id
@@ -21,11 +15,11 @@ const Player = ({q, setQ}) => {
         setQ({ ...q, currentSong: {currentId, audio}, isPlaying:true })
         audio.play()
         displayTime()
-        skip(currentSong)
+        // skip()
     }
 
     const pause = (currentSong) => {
-        togglePause()
+        // console.log(q)
         if (q.isPlaying) {
             q.currentSong.audio.pause()
             setQ ({ ...q, isPlaying: false})
@@ -36,7 +30,7 @@ const Player = ({q, setQ}) => {
         }
     }
 
-    const skip = () => {
+    const skip = (currentSong) => {
         // if (q.isPlaying) {
             const nextSong = q[q.currentSong.currentId + 1]
             if (!nextSong) {
@@ -74,14 +68,16 @@ const Player = ({q, setQ}) => {
             q.currentSong.audio.volume = volume
         }
 
-    const displayTime =  () => {
-         setInterval(() => {
+    const displayTime = async () => {
+        await setInterval(() => {
             setCurrentTime(q.currentSong.audio.currentTime)
+            // q.currentSong.audio.currentTime=currentTime
         }, 500)
     }
 
     const changeTime =  ( event )  => {
-        q.currentSong.audio.currentTime = event.target.valueAsNumber
+        //  setCurrentTime(event.target.valueAsNumber)
+         q.currentSong.audio.currentTime = event.target.valueAsNumber
 
         // await setCurrentTime(event.target.value)
         // console.log('=========', event.target.valueAsNumber)
@@ -150,7 +146,7 @@ const Player = ({q, setQ}) => {
                     min={0}
                     // step={0.02}
                     max= {q.currentSong.audio.duration}
-                    value = {q.currentSong.audio.currentTime}
+                    value = {currentTime}
                     >
                 </input>
                 <div className = 'times'>

@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getSongs } from '../../store/songs'
 import Song from '../Song'
 import Artists from '../Artists'
-import ArtistPage from "../ArtistPage";
 import './Home.css'
+import * as songActions from '../../store/songs'
+
 
 const Home = ({q, setQ}) => {
 
     const artists = useSelector(state => Object.values(state.artists))
+    const dispatch = useDispatch()
+    useEffect(async () => {
+        const songs = await dispatch(songActions.getSongs())
+        setQ({...songs, currentSong: null})    }, [dispatch])
 
     return (
         <div className = 'container'>
@@ -25,7 +29,7 @@ const Home = ({q, setQ}) => {
                         {artists.map(artist => (
                             <a href = {`artists/${artist.id}`} className = 'single__artist'>
                                 <div className = 'artist__img'>
-                                    <img src = {artist.img}></img>
+                                    <img alt = 'artistimg' src = {artist.img}></img>
                                 </div>{artist.name}
                             </a>
                         ))}

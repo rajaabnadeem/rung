@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Redirect, useHistory, NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import { Redirect } from 'react-router-dom';
 import { login } from '../../../store/session'
 import { useDispatch } from 'react-redux';
-import * as sessionActions from '../../../store/session';
 import logo from '../../../images/logo.png'
 import './LoginForm.css'
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
 
     const dispatch = useDispatch();
-    const history = useHistory();
     const [errors, setErrors] = useState([]);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -49,7 +47,7 @@ const onLogin = async (e) => {
                 <div className = 'left__content'>
                     <div className = 'login__logo'>
                         <a className="anchor" href="/">
-                            <img className = 'logo__img' src={logo}></img>
+                            <img alt='logo' className = 'logo__img' src={logo}></img>
                         </a>
                     </div>
                     <div className = 'form__container'>
