@@ -21,6 +21,7 @@ export const getArtistData = ({artist_id}) => async (dispatch) => {
     const response = await fetch(`/api/artists/${artist_id}`)
     const data = await response.json()
     dispatch (loadArtistData(data))
+    return data
 }
 
 const initialState = {}

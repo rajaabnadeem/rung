@@ -63,8 +63,11 @@ class Song(db.Model):
             "name": self.name,
             "length": self.length,
             "url": self.url,
-            "artist_id": self.artist_id,
+            "artist_name": self.artist.name,
             "album_id": self.album_id
+
+            # "artist_id": self.artist_id,
+
         }
 
 # class UserSong(db.Model):

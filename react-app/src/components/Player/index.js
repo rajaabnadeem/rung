@@ -9,11 +9,13 @@ const Player = ({q, setQ}) => {
 
 
     const play = ( currentSong ) => {
+
         const currentId = currentSong.id
         if (q.currentSong) {q.currentSong.audio.pause()}
         let audio = new Audio(currentSong.url)
         setQ({ ...q, currentSong: {currentId, audio}, isPlaying:true })
         audio.play()
+
         displayTime()
         // skip()
     }
@@ -68,11 +70,12 @@ const Player = ({q, setQ}) => {
             q.currentSong.audio.volume = volume
         }
 
-    const displayTime = async () => {
-        await setInterval(() => {
+    const displayTime =  () => {
+         setInterval(() => {
             setCurrentTime(q.currentSong.audio.currentTime)
             // q.currentSong.audio.currentTime=currentTime
         }, 500)
+
     }
 
     const changeTime =  ( event )  => {
@@ -91,7 +94,6 @@ const Player = ({q, setQ}) => {
 //     }
 //     displayTime();
 //   }
-
     if (!q.currentSong) {
         return (<div>HELLO</div>)
     } else {
@@ -129,9 +131,9 @@ const Player = ({q, setQ}) => {
             </div>
 
             <div className = 'song__info'>
-                <div className = 'song__name'>{q[q.currentSong.currentId].name}
+                <div className = 'song__name'>{q[q.currentSong.currentId]?.name}
                 </div>
-                <div className = 'artist__name'>{q[q.currentSong.currentId].artist_name}</div>
+                <div className = 'artist__name'>{q[q.currentSong.currentId]?.artist_name}</div>
             </div>
 
             <div className = 'time'>
@@ -146,14 +148,14 @@ const Player = ({q, setQ}) => {
                     min={0}
                     // step={0.02}
                     max= {q.currentSong.audio.duration}
-                    value = {currentTime}
+                    value = {q.currentSong.audio.currentTime}
                     >
                 </input>
                 <div className = 'times'>
                     <div className = 'time__number'>
                     <div className = 'currentTime'>
-                            { Math.floor(currentTime / 60) + ':' +
-                            (Math.floor(Math.floor(currentTime)) - (Math.floor(currentTime / 60)) * 60) }
+                            { Math.floor(q.currentSong.audio.currentTime / 60) + ':' +
+                            (Math.floor(Math.floor(q.currentSong.audio.currentTime)) - (Math.floor(q.currentSong.audio.currentTime / 60)) * 60) }
                         </div>
                         <div className = 'duration'>
                             { Math.floor(q.currentSong.audio.duration / 60) + ':' +

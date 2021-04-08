@@ -14,6 +14,9 @@ const Home = ({q, setQ}) => {
         const songs = await dispatch(songActions.getSongs())
         setQ({...songs, currentSong: null})    }, [dispatch])
 
+    const allSongs = useSelector(state => (state.songs))
+
+
     return (
         <div className = 'container'>
             <div className = 'container__left'>Artists
@@ -42,7 +45,7 @@ const Home = ({q, setQ}) => {
                     <div className = 'song__artist'>Artist</div>
                     <div className = 'song__length'>Length</div>
                 </div>
-                    <Song q={q} setQ={setQ} />
+                    <Song q={q} setQ={setQ} allSongs={allSongs} />
                 </div>
         </div>
     )

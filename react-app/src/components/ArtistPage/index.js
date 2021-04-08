@@ -2,41 +2,27 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {useParams} from 'react-router-dom'
 import * as artistPageActions from '../../store/artists'
-
+import Song from '../Song'
 import './ArtistPage.css'
 
-const ArtistPage = () => {
+const ArtistPage = ({q, setQ}) => {
 
     const dispatch = useDispatch()
     const artist_id = useParams()
-    const state = useSelector(state => (state?.artists))
+    const artist = useSelector(state => (state?.artists))
+    const allSongs = useSelector(state =>(state?.artists?.songs))
 
-
-    useEffect(() => {
-        dispatch(artistPageActions.getArtistData(artist_id))
-    }, [dispatch, artist_id])
+    useEffect(async () => {
+        const {songs, artist_name} = await dispatch(artistPageActions.getArtistData(artist_id))
+        setQ({...songs, artist_name, currentSong: null})
+    }, [dispatch])
 
     return (
       <>
         <div>HELLO</div>
-        <div>{state?.name}</div>
-        <div>{state?.songs[23].name}</div>
-        {/* <div>{state?.songs[0].name}</div> */}
-
-
-        {/* <div>{state?.songs}</div> */}
-        {/* { state?.songs?.map(song => (
-                <div className = 'single__song'>
-                    <div className ='id'>{song.id}</div>
-                    <div className = 'name'>{song.name}
-                    </div>
-                    <div className = 'artist'>{song.artist_name}</div>
-                    <div className = 'duration'>
-                    { Math.floor(song.length / 60) + ': ' +
-                     (Math.floor(Math.floor(song.length)) - (Math.floor(song.length / 60)) * 60) }
-                </div>
-                </div>
-            ))} */}
+        <div>{artist?.name}</div>
+        {allSongs &&
+          <Song q={q} setQ ={setQ} allSongs={allSongs} />}
       </>
     )
 }

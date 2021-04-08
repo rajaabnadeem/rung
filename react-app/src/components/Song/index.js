@@ -2,9 +2,9 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import './Song.css'
 
-const Song = ({q, setQ}) => {
+const Song = ({q, setQ, allSongs:state}) => {
 
-    const state = useSelector(state => Object.values(state.songs))
+    // const state = useSelector(state => Object.values(state.songs))
 
     const play = ( currentSong ) => {
         const currentId = currentSong.id
@@ -14,10 +14,9 @@ const Song = ({q, setQ}) => {
         audio.play()
     }
 
-
     return (
         <div className = 'song__container'>
-            { state.map(song => (
+            { (Object.values(state).length > 0) && Object.values(state).map(song => (
                 <div onClick={() => play(song)} className = 'single__song'>
                     <div className ='id'>{song.id}</div>
                     <div className = 'name'>{song.name}
