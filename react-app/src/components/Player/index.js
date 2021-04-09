@@ -86,6 +86,15 @@ const Player = ({q, setQ}) => {
         // console.log('=========', event.target.valueAsNumber)
     }
 
+    // const timeFunction = (song) => {
+    //     const minutes =  Math.floor(song.length / 60);
+    //     let seconds = (Math.floor(Math.floor(song.length)) - (Math.floor(song.length / 60)) * 60);
+    //     console.log(seconds)
+    //     if (seconds < 10) { seconds = "0" + seconds;}
+    //     return minutes+':'+seconds;
+    // }
+
+
 // const onScrubEnd = () => {
 //     if (!q.isPlaying) {
 //         setQ ({ ...q, isPlaying: true})
@@ -154,6 +163,7 @@ const Player = ({q, setQ}) => {
                 <div className = 'times'>
                     <div className = 'time__number'>
                     <div className = 'currentTime'>
+                        {/* {timeFunction(q.currentSong)} */}
                             { Math.floor(q.currentSong.audio.currentTime / 60) + ':' +
                             (Math.floor(Math.floor(q.currentSong.audio.currentTime)) - (Math.floor(q.currentSong.audio.currentTime / 60)) * 60) }
                         </div>
