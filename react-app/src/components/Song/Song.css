@@ -1,22 +1,31 @@
+.song__container {
+  background-color: rgb(35, 35, 35);
+}
+
 .single__song {
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  border: 1px solid white;
+  border-top: 1px solid #ad6001;
+  /* opacity: 0.8; */
   justify-content: space-between;
+  color: white;
 }
 
 .name,
 .artist,
 .length,
 .id {
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .length {
   justify-content: end;
 }
 
-.song__container {
+.navbar__song {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }

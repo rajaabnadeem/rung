@@ -39,12 +39,6 @@ const Home = ({q, setQ}) => {
                     </div>
                 </div>
                 <div className = 'content__header'> Browse Today's Hits </div>
-                <div className = 'navbar__song'>
-                    <div className = 'song__id'>#</div>
-                    <div className = 'song__name'>Name</div>
-                    <div className = 'song__artist'>Artist</div>
-                    <div className = 'song__length'>Length</div>
-                </div>
                     <Song q={q} setQ={setQ} allSongs={allSongs} />
                 </div>
         </div>
