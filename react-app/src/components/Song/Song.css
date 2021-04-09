@@ -1,15 +1,26 @@
 .song__container {
   background-color: rgb(35, 35, 35);
+  margin-right: 10px;
 }
 
 .single__song {
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  border-top: 1px solid #ad6001;
-  /* opacity: 0.8; */
-  justify-content: space-between;
+  align-items: baseline;
+  justify-content: space-evenly;
   color: white;
+}
+.hr {
+  display: flex;
+  justify-content: center;
+}
+
+.hr hr {
+  height: 1px;
+  border: none;
+  background-color: #ad6001;
+  width: 96%;
 }
 
 .name,
@@ -18,6 +29,12 @@
 .id {
   padding-top: 10px;
   padding-bottom: 10px;
+  width: 150px;
+}
+
+.name,
+.artist {
+  margin-right: 50px;
 }
 
 .length {
@@ -27,5 +44,8 @@
 .navbar__song {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: baseline;
+  justify-content: space-around;
+  color: white;
 }

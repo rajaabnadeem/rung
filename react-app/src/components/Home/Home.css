@@ -6,7 +6,8 @@
 
 .container__left {
   flex: 23%;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(35, 35, 35);
+  padding-right: 10px;
 }
 
 .container__right {
@@ -38,18 +39,6 @@ img {
 
 .content__header {
   padding-left: 20px;
+  padding-bottom: 10px;
   font-size: 22pt;
 }
-/*
-.navbar__song {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-} */
-/*
-.song {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-} */
