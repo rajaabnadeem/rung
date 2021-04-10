@@ -109,33 +109,38 @@ const Player = ({q, setQ}) => {
     return (
         <div className = 'player__container'>
             <div className = 'controls'>
-                <div className = 'buttons'>
+                <div className = 'extra b'></div>
+                <div className = 'buttons b'>
                     <button className = 'previous' onClick = {previous} className ='previous'>
-                        <i class="fas fa-angle-double-left"></i>
+                        <i className="fas fa-angle-double-left d"></i>
                     </button>
                     <button className = 'pause' onClick = {pause} className ='pause'>
                         {q.isPlaying ?
-                        <i class="far fa-pause-circle"></i> :
-                        <i class="far fa-play-circle"></i>}
+                        <i className="fas fa-pause c"></i> :
+                        <i className="fas fa-play c"></i>
+                        }
+
                     </button>
                     <button className = 'skip' onClick = {skip} className ='skip'>
-                        <i class="fas fa-angle-double-right"></i>
+                        <i className="fas fa-angle-double-right d"></i>
                     </button>
                 </div>
-                <div className = 'volume__controls'>
-                    <button className = 'mute' onClick={changeMute}>
-                        {muted ?
-                        <i class="fas fa-volume-mute"></i> :
-                        <i class="fas fa-volume-up"></i>
-                        }
-                    </button>
-                    <input className = 'volume__slider'
-                        onChange={changeVolume}
-                        type="range"
-                        min={0}
-                        max={1}
-                        step={0.02}
-                        value={volume}/>
+                <div className = 'b'>
+                    <div className = 'volume__controls'>
+                        <button className = 'mute' onClick={changeMute}>
+                            {muted ?
+                            <i class="fas fa-volume-mute"></i> :
+                            <i class="fas fa-volume-up"></i>
+                            }
+                        </button>
+                        <input className = 'volume__slider'
+                            onChange={changeVolume}
+                            type="range"
+                            min={0}
+                            max={1}
+                            step={0.02}
+                            value={volume}/>
+                    </div>
                 </div>
             </div>
 
@@ -171,14 +176,6 @@ const Player = ({q, setQ}) => {
                             { Math.floor(q.currentSong.audio.duration / 60) + ':' +
                             (Math.floor(Math.floor(q.currentSong.audio.duration)) - (Math.floor(q.currentSong.audio.duration / 60)) * 60) }
                         </div>
-                        {/* <div className = 'currentTime'>
-                            { Math.floor(q.currentSong.audio.currentTime / 60) + ':' +
-                            (Math.floor(Math.floor(q.currentSong.audio.currentTime)) - (Math.floor(q.currentSong.audio.currentTime / 60)) * 60) }
-                        </div>
-                        <div className = 'duration'>
-                            { Math.floor(q.currentSong.audio.duration / 60) + ':' +
-                            (Math.floor(Math.floor(q.currentSong.audio.duration)) - (Math.floor(q.currentSong.audio.duration / 60)) * 60) }
-                        </div> */}
                     </div>
                 </div>
             </div>

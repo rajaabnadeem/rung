@@ -15,4 +15,25 @@
   width: 100%;
   height: 180px;
   size: contain;
+  background: url() fixed center no-repeat;
 }
+
+.imgdiv {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  background-color: white;
+}
+.imgname {
+  border: 2px solid black;
+  text-decoration: none;
+}
+a.artist__banner {
+  text-decoration: none;
+  color: green;
+}
+/*
+.single_artist__container > .artist__banner {
+  text-decoration: none;
+  color: green;
+} */

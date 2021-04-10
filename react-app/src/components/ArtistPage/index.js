@@ -11,19 +11,25 @@ const ArtistPage = ({q, setQ}) => {
     const artist_id = useParams()
     const artist = useSelector(state => (state?.artists))
     const allSongs = useSelector(state =>(state?.artists?.songs))
+    // const allArtists = useSelector(state => state?.artists)
 
     useEffect(async () => {
         const {songs, artist_name} = await dispatch(artistPageActions.getArtistData(artist_id))
         setQ({...songs, artist_name, currentSong: null})
+        dispatch(artistPageActions.getAllArtists())
     }, [dispatch])
 
     return (
-      <>
+
+    <div>
         <div>HELLO</div>
         <div>{artist?.name}</div>
+        <div>
+          <img src={artist.banner}></img>
+        </div>
         {allSongs &&
           <Song q={q} setQ ={setQ} allSongs={allSongs} />}
-      </>
+          </div>
     )
 }
 

@@ -1,30 +1,71 @@
 .player__container {
   display: flex;
-  background-color: rgb(40, 40, 40);
+  background-color: rgb(28, 28, 28);
   flex-direction: column;
   color: #ff8c00;
-  height: 130px;
-  border-top: 1px solid white;
+  height: 145px;
+  border-top: 1px solid #bd6801;
+  position: relative;
+  float: bottom;
 }
 
 .controls {
+  display: flex;
   width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.b {
+  width: 33%;
   text-align: center;
 }
 
+.fas.c {
+  font-size: 35px;
+}
+
+.fas.d {
+  font-size: 20px;
+}
+
 .volume__controls {
-  padding-top: 10px;
-  padding-right: 15px;
   float: right;
-  width: 100px;
+  width: 130px;
+  padding-right: 20px;
 }
 
 .buttons {
-  display: inline-block;
   margin: 0 auto;
-  width: 160px;
-  margin-left: 140px;
-  margin-top: 10px;
+  align-items: center;
+}
+
+.previous,
+.pause,
+.skip {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  color: #ff8c00;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.pause {
+  margin: 0px 50px;
+}
+
+.mute {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  color: #ff8c00;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  padding-top: 5px;
 }
 
 .song__info {
@@ -33,6 +74,7 @@
   width: 100%;
   text-align: center;
   color: #ff8c00;
+  margin-top: 5px;
 }
 
 .song__name {
@@ -41,19 +83,21 @@
 
 .artist__name {
   font-size: 16pt;
+  margin-bottom: 3px;
+  margin-top: -4px;
 }
 
 .volume__controls {
   display: flex;
   -webkit-appearance: none;
-  width: 130px;
+  /* width: 130px; */
   margin: auto;
 }
 
 .time {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -67,6 +111,7 @@
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   width: 100%;
   background: transparent; /* Otherwise white in Chrome */
+  margin-left: 5px;
 }
 .time__slider {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
@@ -88,8 +133,8 @@
 .volume__slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #000000;
-  height: 25px;
-  width: 20px;
+  height: 15px;
+  width: 5px;
   border-radius: 10px;
   opacity: 0.8;
   background: #ffffff;
@@ -101,10 +146,10 @@
 .time__slider::-webkit-slider-runnable-track,
 .volume__slider::-webkit-slider-runnable-track {
   width: 60%;
-  height: 10px;
+  height: 2px;
   cursor: pointer;
   /* box-shadow: 1px 1px 1px white, 0px 0px 1px white; */
   background: #ff8c00;
   border-radius: 1.3px;
-  /* border: 0.2px solid #010101; */
+  padding: 10px transparent;
 }

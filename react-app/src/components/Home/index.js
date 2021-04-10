@@ -30,11 +30,12 @@ const Home = ({q, setQ}) => {
                     </div>
                     <div className = 'artist__info'>
                         {artists.map(artist => (
-                            <a href = {`artists/${artist.id}`} className = 'single__artist'>
-                                <div className = 'artist__img'>
-                                    <img alt = 'artistimg' src = {artist.img}></img>
-                                </div>{artist.name}
-                            </a>
+                            <div className = 'single_artist'>
+                                <a href = {`artists/${artist.id}`} className = 'single__artist'>
+                                    <img className='single_img' alt = 'artistimg' src = {artist.img}></img>
+                                    <div className ='artistname'>{artist.name}</div>
+                                </a>
+                            </div>
                         ))}
                     </div>
                 </div>

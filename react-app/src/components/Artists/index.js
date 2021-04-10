@@ -19,10 +19,13 @@ const Artists = () => {
     return (
         <div className = 'artists_container__left'>
             { state.map(artist => (
-                <div className = 'single_artist__container'>
-                    <a className = 'artist__banner' href = {`artists/${artist.id}`}></a>
-                    <img  alt= 'artist_banner' className ="banner__img" src = {artist.banner}/>
-                    <h3>{artist.name}</h3>
+                <div className='single_artist__container'>
+                    <a className='artist__banner' href={`artists/${artist.id}`}>{artist.name}</a>
+                    <div className='imgdiv'>
+                        <div>
+                            <img  alt='artist_banner' className ="banner__img" src={artist.banner}/>
+                        </div>
+                    </div>
                 </div>
             ))}
         </div>
