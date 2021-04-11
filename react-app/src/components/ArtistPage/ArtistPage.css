@@ -1,0 +1,21 @@
+.artistpage__header {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  background-color: black;
+  justify-content: center;
+}
+
+.artistpage__banner {
+  display: flex;
+  width: 60%;
+  height: 400px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.artistpage__name {
+  color: white;
+  margin-left: 20%;
+  font-size: 30pt;
+}

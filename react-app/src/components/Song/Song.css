@@ -11,8 +11,7 @@
   align-items: baseline;
   justify-content: space-between;
   color: white;
-  padding-top: 3px;
-  font-size: 13pt;
+  font-size: 14pt;
 }
 .hr {
   display: flex;

@@ -6,6 +6,7 @@ const Player = ({q, setQ}) => {
     const [volume, setVolume] = useState(0.7)
     const [muted, setMuted] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)
+    const [song, setSong] = useState()
 
 
     const play = ( currentSong ) => {
@@ -15,13 +16,11 @@ const Player = ({q, setQ}) => {
         let audio = new Audio(currentSong.url)
         setQ({ ...q, currentSong: {currentId, audio}, isPlaying:true })
         audio.play()
-
         displayTime()
-        // skip()
+
     }
 
     const pause = (currentSong) => {
-        // console.log(q)
         if (q.isPlaying) {
             q.currentSong.audio.pause()
             setQ ({ ...q, isPlaying: false})
@@ -33,7 +32,6 @@ const Player = ({q, setQ}) => {
     }
 
     const skip = (currentSong) => {
-        // if (q.isPlaying) {
             const nextSong = q[q.currentSong.currentId + 1]
             if (!nextSong) {
                 pause()
@@ -41,10 +39,8 @@ const Player = ({q, setQ}) => {
             }
             play(nextSong)
         }
-    // }
 
     const previous = () => {
-        // if (q.isPlaying) {
             const previousSong = q[q.currentSong.currentId - 1]
             if (!previousSong) {
                 pause()
@@ -52,7 +48,6 @@ const Player = ({q, setQ}) => {
             }
             play(previousSong)
         }
-    // }
 
     const changeMute = () => {
         if (!muted) {
@@ -73,7 +68,6 @@ const Player = ({q, setQ}) => {
     const displayTime =  () => {
          setInterval(() => {
             setCurrentTime(q.currentSong.audio.currentTime)
-            // q.currentSong.audio.currentTime=currentTime
         }, 500)
 
     }
@@ -81,9 +75,6 @@ const Player = ({q, setQ}) => {
     const changeTime =  ( event )  => {
         //  setCurrentTime(event.target.valueAsNumber)
          q.currentSong.audio.currentTime = event.target.valueAsNumber
-
-        // await setCurrentTime(event.target.value)
-        // console.log('=========', event.target.valueAsNumber)
     }
 
     // const timeFunction = (song) => {
@@ -94,17 +85,8 @@ const Player = ({q, setQ}) => {
     //     return minutes+':'+seconds;
     // }
 
-
-// const onScrubEnd = () => {
-//     if (!q.isPlaying) {
-//         setQ ({ ...q, isPlaying: true})
-
-//     //   setIsPlaying(true)
-//     }
-//     displayTime();
-//   }
     if (!q.currentSong) {
-        return (<div>HELLO</div>)
+        return (<div></div>)
     } else {
     return (
         <div className = 'player__container'>
@@ -154,13 +136,8 @@ const Player = ({q, setQ}) => {
                 <input className = 'time__slider'
                     onLoad={displayTime()}
                     onChange={changeTime}
-                    // onClick={changeTime}
-                    // onChange={(e) => changeTime(e.target.value)}
-                    // onMouseUp={changeTime}
-                    // onKeyUp={changeTime}
                     type="range"
                     min={0}
-                    // step={0.02}
                     max= {q.currentSong.audio.duration}
                     value = {q.currentSong.audio.currentTime}
                     >

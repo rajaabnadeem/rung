@@ -19,7 +19,7 @@ const Home = ({q, setQ}) => {
 
     return (
         <div className = 'container'>
-            <div className = 'container__left'>Artists
+            <div className = 'container__left'>
             <a href = {`artists/${artists.id}`}>
                 <Artists/>
                 </a>
@@ -33,7 +33,7 @@ const Home = ({q, setQ}) => {
                             <div className = 'single_artist'>
                                 <a href = {`artists/${artist.id}`} className = 'single__artist'>
                                     <img className='single_img' alt = 'artistimg' src = {artist.img}></img>
-                                    <div className ='artistname'>{artist.name}</div>
+                                    <div className ='artistname'><strong>{artist.name}</strong></div>
                                 </a>
                             </div>
                         ))}

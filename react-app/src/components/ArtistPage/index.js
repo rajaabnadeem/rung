@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {useParams} from 'react-router-dom'
 import * as artistPageActions from '../../store/artists'
 import Song from '../Song'
+import Artists from '../Artists'
 import './ArtistPage.css'
 
 const ArtistPage = ({q, setQ}) => {
@@ -21,12 +22,14 @@ const ArtistPage = ({q, setQ}) => {
 
     return (
 
-    <div>
-        <div>HELLO</div>
-        <div>{artist?.name}</div>
-        <div>
-          <img src={artist.banner}></img>
+    <div className = 'artistpage__container'>
+      <div className = 'artistpage__header'>
+          <img className = 'artistpage__banner' src={artist.banner}></img>
+          <div className = 'artistpage__name'>{artist?.name}</div>
         </div>
+        <div>
+        </div>
+
         {allSongs &&
           <Song q={q} setQ ={setQ} allSongs={allSongs} />}
           </div>
