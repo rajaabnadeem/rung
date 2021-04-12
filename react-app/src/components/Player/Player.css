@@ -3,10 +3,10 @@
   background-color: rgb(28, 28, 28);
   flex-direction: column;
   color: #ff8c00;
-  height: 145px;
+  height: 135px;
   border-top: 1px solid #bd6801;
-  position: relative;
-  float: bottom;
+  position: sticky;
+  bottom: 0;
 }
 
 .controls {
@@ -23,11 +23,11 @@
 }
 
 .fas.c {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .fas.d {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .volume__controls {
@@ -65,7 +65,7 @@
   cursor: pointer;
   overflow: hidden;
   outline: none;
-  padding-top: 5px;
+  padding-top: 4px;
 }
 
 .song__info {
@@ -74,17 +74,17 @@
   width: 100%;
   text-align: center;
   color: #ff8c00;
-  margin-top: 5px;
+  margin-top: -3px;
 }
 
 .song__name {
-  font-size: 20pt;
+  font-size: 19pt;
 }
 
 .artist__name {
   font-size: 16pt;
-  margin-bottom: 3px;
-  margin-top: -4px;
+  margin-bottom: 5px;
+  margin-top: -8px;
 }
 
 .volume__controls {
@@ -111,7 +111,6 @@
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   width: 100%;
   background: transparent; /* Otherwise white in Chrome */
-  margin-left: 5px;
 }
 .time__slider {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */

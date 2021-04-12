@@ -96,7 +96,6 @@ const onLogin = async (e) => {
                     </div>
                 </div>
                 <div className = 'right__content'>
-                RIGHT CONTENT
                 </div>
         </div>
     </div>

@@ -6,6 +6,7 @@ import Song from '../Song'
 import Artists from '../Artists'
 import './ArtistPage.css'
 
+
 const ArtistPage = ({q, setQ}) => {
 
     const dispatch = useDispatch()
@@ -25,14 +26,15 @@ const ArtistPage = ({q, setQ}) => {
     <div className = 'artistpage__container'>
       <div className = 'artistpage__header'>
           <img className = 'artistpage__banner' src={artist.banner}></img>
-          <div className = 'artistpage__name'>{artist?.name}</div>
+        <div className='artistpage__name_bio'>
+          <div className='artistpage_name'>{artist?.name}</div>
+          <div className='artistpage_bio'>{artist?.bio}</div>
         </div>
-        <div>
-        </div>
-
-        {allSongs &&
-          <Song q={q} setQ ={setQ} allSongs={allSongs} />}
-          </div>
+      </div>
+      <div className='discography'>Discography</div>
+    {allSongs &&
+      <Song q={q} setQ ={setQ} allSongs={allSongs} />}
+    </div>
     )
 }
 
