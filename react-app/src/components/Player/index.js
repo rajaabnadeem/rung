@@ -4,6 +4,7 @@ import './Player.css'
 const Player = ({q, setQ}) => {
 
     const [volume, setVolume] = useState(0.7)
+    const [previousVolume, setPreviousVolume] =  useState()
     const [muted, setMuted] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)
     const [song, setSong] = useState()
@@ -52,10 +53,11 @@ const Player = ({q, setQ}) => {
     const changeMute = () => {
         if (!muted) {
             q.currentSong.audio.muted = true
+            setPreviousVolume(volume)
             setVolume(0)
         }
         else { q.currentSong.audio.muted = false
-            setVolume(volume)
+            setVolume(previousVolume)
         }
         setMuted(muted => !muted)
     }
@@ -147,11 +149,11 @@ const Player = ({q, setQ}) => {
                     <div className = 'currentTime'>
                         {/* {timeFunction(q.currentSong)} */}
                             { Math.floor(q.currentSong.audio.currentTime / 60) + ':' +
-                            (Math.floor(Math.floor(q.currentSong.audio.currentTime)) - (Math.floor(q.currentSong.audio.currentTime / 60)) * 60) }
-                        </div>
+                            (String((Math.floor(Math.floor(q.currentSong.audio.currentTime)) - (Math.floor(q.currentSong.audio.currentTime / 60)) * 60))).padStart(2, 0) }
+                            </div>
                         <div className = 'duration'>
                             { Math.floor(q.currentSong.audio.duration / 60) + ':' +
-                            (Math.floor(Math.floor(q.currentSong.audio.duration)) - (Math.floor(q.currentSong.audio.duration / 60)) * 60) }
+                            (String((Math.floor(Math.floor(q.currentSong.audio.duration)) - (Math.floor(q.currentSong.audio.duration / 60)) * 60))).padStart(2, 0) }
                         </div>
                     </div>
                 </div>

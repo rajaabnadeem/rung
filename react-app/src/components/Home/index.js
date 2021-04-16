@@ -4,7 +4,7 @@ import Song from '../Song'
 import Artists from '../Artists'
 import './Home.css'
 import * as songActions from '../../store/songs'
-
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
 const Home = ({q, setQ}) => {
 
