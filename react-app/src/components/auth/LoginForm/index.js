@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from 'react-router-dom';
 import { login } from '../../../store/session'
 import { useDispatch } from 'react-redux';
+import SignUpForm from '../SignUpForm'
 import logo from '../../../images/logo.png'
 import './LoginForm.css'
 
@@ -20,7 +21,6 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
 const onLogin = async (e) => {
     e.preventDefault();
-    // console.log('==============')
     const user = await dispatch(login({email, password}));
     if (!user.errors) {
       setAuthenticated(true);
@@ -38,7 +38,6 @@ const onLogin = async (e) => {
   };
 
   if (authenticated) {
-    //   return history.push('/')
     return <Redirect to="/" />;
   } else {
     return (
@@ -46,9 +45,10 @@ const onLogin = async (e) => {
             <div className = 'content__container'>
                 <div className = 'left__content'>
                     <div className = 'login__logo'>
-                        <a className="anchor" href="/">
+                        <a href="/">
                             <img alt='logo' className = 'logo__img' src={logo}></img>
                         </a>
+                        <div className='loginform__header'>Pick up where you left off</div>
                     </div>
                     <div className = 'form__container'>
                         <form onSubmit={onLogin}>
@@ -60,8 +60,9 @@ const onLogin = async (e) => {
                                         ))}
                                 </ul>
                             </div>
+                            {/* <div className='loginform__login'>Log In</div> */}
                             <div className="email-label-container">
-                                    <label className="email-label">Email address</label>
+                                    <label className="email-label">Email:</label>
                                 </div>
                                 <div className="email-input-container">
                                     <input
@@ -73,7 +74,7 @@ const onLogin = async (e) => {
                                     />
                                 </div>
                                 <div className="password-label-container">
-                                    <label className="password-label">Password</label>
+                                    <label className="password-label">Password:</label>
                                 </div>
                                 <div className="password-input-container">
                                     <input
@@ -96,6 +97,8 @@ const onLogin = async (e) => {
                     </div>
                 </div>
                 <div className = 'right__content'>
+                    <SignUpForm authenticated={authenticated}
+                                setAuthenticated={setAuthenticated}/>
                 </div>
         </div>
     </div>

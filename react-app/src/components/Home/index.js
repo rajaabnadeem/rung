@@ -4,7 +4,6 @@ import Song from '../Song'
 import Artists from '../Artists'
 import './Home.css'
 import * as songActions from '../../store/songs'
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
 const Home = ({q, setQ}) => {
 
@@ -18,30 +17,15 @@ const Home = ({q, setQ}) => {
 
 
     return (
+
         <div className = 'container'>
-            <div className = 'container__left'>
-            <a href = {`artists/${artists.id}`}>
-                <Artists/>
-                </a>
-            </div>
-            <div className = 'container__right'>
                 <div className = 'artist__container'>
                     <div className = 'artist__header'> Check out your favorite artists
                     </div>
-                    <div className = 'artist__info'>
-                        {artists.map(artist => (
-                            <div className = 'single_artist'>
-                                <a href = {`artists/${artist.id}`} className = 'single__artist'>
-                                    <img className='single_img' alt = 'artistimg' src = {artist.img}></img>
-                                    <div className ='artistname'><strong>{artist.name}</strong></div>
-                                </a>
-                            </div>
-                        ))}
-                    </div>
+                        <Artists/>
                 </div>
                 <div className = 'content__header'> Browse Today's Hits </div>
                     <Song q={q} setQ={setQ} allSongs={allSongs} />
-                </div>
         </div>
     )
 }

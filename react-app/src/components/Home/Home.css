@@ -1,31 +1,8 @@
 .container {
   display: flex;
+  flex-direction: column;
   background-color: rgb(35, 35, 35);
   color: white;
-}
-
-.container__left {
-  flex: 20%;
-  background-color: rgb(35, 35, 35);
-}
-
-.container__right {
-  flex: 80%;
-}
-
-.artist__info {
-  display: flex;
-  flex-direction: wrap;
-  width: 100%;
-  justify-content: center;
-}
-
-.single__artist {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 12px;
-  text-decoration: none;
-  align-items: center;
 }
 
 .artist__header {
@@ -40,16 +17,9 @@
   font-size: 22pt;
 }
 
-.single_img {
-  border-radius: 70px;
-  height: 140px;
-  width: 140px;
-}
-
 .artistname {
   text-decoration: none;
   color: white;
   font-size: 15pt;
   margin-top: 12px;
-  /* font-weight: bold; */
 }

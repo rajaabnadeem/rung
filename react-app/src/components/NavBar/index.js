@@ -25,10 +25,12 @@ if (authenticated) {
 } else {
     return (
         <div className="navContainer">
+            <div></div>
             <div className = 'navbar__logo'>
                 <a className="anchor" href="/">
                 <img alt='logo' className = 'navbar__logo' src={logo}></img></a>
             </div>
+            <div></div>
         </div>
         )
     }

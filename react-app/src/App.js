@@ -18,6 +18,7 @@ function App() {
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
+
   // const artists = useSelector(state => Object.values(state.artists))
   // const {artist_id} = useParams()
 
@@ -57,19 +58,20 @@ if (!loaded) {
                setAuthenticated={setAuthenticated}
           />
         </Route>
-        <Route path="/sign-up"
+        {/* <Route path="/sign-up"
                exact={true}>
           <SignUpForm
-               authenticated={authenticated}
-              setAuthenticated={setAuthenticated} />
-        </Route>
+              authenticated={authenticated}
+              setAuthenticated={setAuthenticated}
+              />
+        </Route> */}
           <ProtectedRoute path = {`/artists/:artist_id`}
                 exact={true}
                 authenticated={authenticated}
                >
             <ArtistPage
-              q = {q}
-              setQ = {setQ}/>
+                q = {q}
+                setQ = {setQ}/>
           </ProtectedRoute>
           <ProtectedRoute path="/"
                 exact={true}

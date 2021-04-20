@@ -6,8 +6,7 @@ from app.models import db, User
 
 def seed_users():
 
-    demo = User(username='demo',
-                first_name='Demo',
+    demo = User(first_name='Demo',
                 last_name='User',
                 email='demo@user.com',
                 hashed_password=generate_password_hash('password'))
