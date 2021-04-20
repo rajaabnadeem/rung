@@ -31,7 +31,7 @@ carousel()
                     infinite={true}
                     dragStep={1}
                     step={1}
-                    interval={7000}>
+                    interval={9000}>
                     <ButtonBack className = 'slider__left'>
                         <i className="fas fa-angle-double-left d"></i>
                     </ButtonBack>

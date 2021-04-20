@@ -117,19 +117,78 @@ def seed_songs():
     song51 = Song(name="INTRODUCTION", length=130, artist_id=6,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Faris+Shafi+-+INTRODUCTION.mp3')
 
-    song52 = Song(name='Crack Rock', length=176, artist_id=7,
+    song52 = Song(name="Kahaani Puraani", length=227, artist_id=7,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Mooroo+-+Kahaani+Puraani.mp3')
+    song53 = Song(name="Tasveer", length=262, artist_id=7,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/+Mooroo+-+Tasveer.mp3')
+    song54 = Song(name="Mein Koun Houn", length=326, artist_id=7,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Mooroo+-+Mein+Koun+Houn.mp3')
+
+    song55 = Song(name='Kaghazi', length=182, artist_id=8,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Poor+Rich+Boy+-+Kaghazi.mp3')
+    song56 = Song(name='Jahez Mein Churail', length=238, artist_id=8,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Poor+Rich+Boy+-+Jahez+Mein+Churail.mp3')
+    song57 = Song(name='Sumandar Ki Teh Mein', length=182, artist_id=8,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Poor+Rich+Boy+-+Samundar+Ki+Teh+Mein.mp3')
+    song58 = Song(name='Jatay Jatay', length=227, artist_id=8,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Poor+Rich+Boy+-+Jatay+Jatay.mp3')
+
+    song59 = Song(name='Melancholic', length=223, artist_id=9,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Maanu+-+Melancholic.mp3')
+    song60 = Song(name='Khwaab', length=244, artist_id=9,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Maanu+-+Khwaab.mp3')
+    song61 = Song(name='Taranay', length=232, artist_id=9,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Maanu+-+Taranay.mp3')
+
+    song62 = Song(name='30', length=123, artist_id=10,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Imam+Hamdani+-+30.mp3')
+    song63 = Song(name='Bhaaga Re', length=216, artist_id=10,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Imam+Hamdani+-+Bhaaga+Re.mp3')
+    song64 = Song(name='Neend Aati Nahin (Cover)',
+                  length=268, artist_id=10, url='')
+
+    song65 = Song(name='AFSANAY', length=390, artist_id=11,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Young+Stunners+-+AFSANAY.mp3')
+    song66 = Song(name="DON'T MIND", length=195, artist_id=11,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Young+Stunners+-+DONT+MIND.mp3')
+    song67 = Song(name='GUMAAN', length=272, artist_id=11,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Young+Stunners+-+GUMAAN.mp3')
+    song68 = Song(name='LAGA REH', length=254, artist_id=11,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Young+Stunners+-+LAGA+REH.mp3')
+    song69 = Song(name='QUARANTINE', length=260, artist_id=11,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Young+Stunners+-+QUARANTINE.mp3')
+
+    song70 = Song(name='Aaj Bazaar Mein', length=273, artist_id=12,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Bayaan+-+Aaj+Bazaar+Mein.mp3')
+    song71 = Song(name='Din Dhalay', length=346, artist_id=12,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Bayaan+-+Din+Dhalay.mp3')
+    song72 = Song(name='Nahin Milta', length=302, artist_id=12,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Bayaan+-+Nahin+Milta.mp3')
+    song73 = Song(name='Teri Tasveer', length=342, artist_id=12,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Bayaan+-+Teri+Tasveer.mp3')
+
+    song74 = Song(name='Dhoop', length=294, artist_id=13,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/KASHMIR+-+Dhoop.mp3')
+    song75 = Song(name='Khwaab', length=344, artist_id=13,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/KASHMIR+-+Khwaab.mp3')
+    song76 = Song(name='Pari', length=288, artist_id=13,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/KASHMIR+-+Pari.mp3')
+    song77 = Song(name='Parwana Hun', length=332, artist_id=13,
+                  url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/KASHMIR+-+Parwana+Hun.mp3')
+
+    song78 = Song(name='Crack Rock', length=176, artist_id=14,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Crack+Rock.mp3')
-    song53 = Song(name='Pyramids', length=330, artist_id=7,
+    song79 = Song(name='Pyramids', length=330, artist_id=14,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Pyramids.mp3')
-    song54 = Song(name='Nights', length=307, artist_id=7,
+    song80 = Song(name='Nights', length=307, artist_id=14,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Nights.mp3')
-    song55 = Song(name='Pink + White', length=185, artist_id=7,
+    song81 = Song(name='Pink + White', length=185, artist_id=14,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Pink+%2B+White.mp3')
-    song56 = Song(name='Self Control', length=250, artist_id=7,
+    song82 = Song(name='Self Control', length=250, artist_id=14,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Self+Control.mp3')
-    song57 = Song(name='Thinkin Bout You', length=201, artist_id=7,
+    song83 = Song(name='Thinkin Bout You', length=201, artist_id=14,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+Thinkin+Bout+You.mp3')
-    song58 = Song(name='White Ferrari', length=249, artist_id=7,
+    song84 = Song(name='White Ferrari', length=249, artist_id=14,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Frank+Ocean+-+White+Ferrari.mp3')
 
     db.session.add(song0)
@@ -192,6 +251,32 @@ def seed_songs():
     db.session.add(song56)
     db.session.add(song57)
     db.session.add(song58)
+    db.session.add(song59)
+    db.session.add(song60)
+    db.session.add(song61)
+    db.session.add(song62)
+    db.session.add(song63)
+    db.session.add(song64)
+    db.session.add(song65)
+    db.session.add(song66)
+    db.session.add(song67)
+    db.session.add(song68)
+    db.session.add(song69)
+    db.session.add(song70)
+    db.session.add(song71)
+    db.session.add(song72)
+    db.session.add(song73)
+    db.session.add(song74)
+    db.session.add(song75)
+    db.session.add(song76)
+    db.session.add(song77)
+    db.session.add(song78)
+    db.session.add(song79)
+    db.session.add(song80)
+    db.session.add(song81)
+    db.session.add(song82)
+    db.session.add(song83)
+    db.session.add(song84)
 
     db.session.commit()
 

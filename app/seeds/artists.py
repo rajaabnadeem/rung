@@ -34,9 +34,30 @@ def seed_artists():
                      banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/farisshafi.jpeg',
                      bio="Faris Shafi is a Pakistani rapper and artist. His singles Jawab De and Awaam are very popular song amongst his fans. He has also done projects like Sprite ad's play back singer/rapper and Roar playback singer/rapper.")
 
-    artist7 = Artist(name='Frank Ocean',
-                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/frank.jpeg',
-                     banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/frankocean.jpeg', bio='Frank Ocean (born Christopher Edwin Breaux, October 28, 1987) is an American singer, songwriter, record producer, photographer, and visual artist. Recognized for his idiosyncratic musical style, introspective and elliptical songwriting, and wide vocal range, Ocean is among the most acclaimed artists of his generation.')
+    artist7 = Artist(name='Mooroo', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/mooroo.png', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/mooroo__banner.png',
+                     bio='Taimoor Salahuddin, who is better known by his stage name Mooroo, is a Pakistani YouTuber and musician. Born in Lahore, Pakistan, he is ethnically Chinioti. He received his education from various institutions in Pakistan and North America and upon completion of his Bachelors of Science in Film Production concluded his academic quandary. Based in Karachi, Pakistan Mooroo, now runs a Production House, and is an Editor, Cinematographer, Director, Colorist, Producer, Composer and a Musician.')
+
+    artist8 = Artist(name='Poor Rich Boy', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/poorrichboy.jpeg', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/poorrichboy_banner.jpeg',
+                     bio='Poor Rich Boy, Pakistan’s underground indie-art rock phenomenon, conjures the strangeness of everyday life in a society where expressing one’s inner world can be both a cathartic and subtly rebellious act. Enigmatic and layered, the band’s striking vocals, atmospheric sounds, and the occasional kazoo create a crystalline sound that suggests, but rarely reveals.')
+
+    artist9 = Artist(name='Maanu', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/maanu.jpeg', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/maanu_banner.jpeg',
+                     bio='Now Maanu, aka Rehman Afshar, is releasing each track from his new album ‘Yain City’. The album seeks to give Lahore a new musical identity, with the yain representing both the excitement and the chaos of the city. Afshar depicts this dichotomy by splitting himself into an alter ego: on these songs there’s Maanu – the more mature young adult – and then there’s Chotus, an angsty chaotic force, brimming with discontent.')
+
+    artist10 = Artist(name='Imam Hamdani', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/hamdani.jpeg', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/hamdani_banner.jpeg',
+                      bio="Imam Hamdani, a guitar player and songwriter from Karachi, Pakistan first came onto the scene via Uth Records in 2012. The following year he formed his own band 'Teeen' with Sara Haider and Ahsan Ghulam Haider. From 2015 to 2017 he attended Berklee College Of Music. Currently he is working on his first solo E.P. His music can be described as a blend of Pop, Blues and Indie music.")
+
+    artist11 = Artist(name='Young Stunners', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/youngstunners.jpeg', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/youngstunners_banner.jpeg',
+                      bio='Young Stunners is an underground band consisting of two independent Urdu rappers Talha Anjum and Talha Yunus, released their first popular song Burger-e-Karachi which was a classical satirical humor directed towards the burger boys. The song became instantly viral. After that, they threw back to back hits among which are Maila Majnu and Laam se Chaura. Since then, the band has seen their ups and downs but they have remained true to the game. They have a list of hit songs to their name. They are considered the pioneers of the urdu rap, a title they earned through a long hustle.')
+
+    artist12 = Artist(name='Bayaan', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/bayaan.jpeg', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/bayaan_banner.jpg',
+                      bio='Bayaan is a progressive/alternative rock band from Lahore, Pakistan. It is the winning band of Pepsi Battle of the Bands Season 3 in 2018. Appeared in Nescafe Basement, the band has performed throughout Pakistan before appearing in Pepsi Battle of the Bands.')
+
+    artist13 = Artist(name='Kashmir', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/kashmir.jpeg', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/kashmir_banner.jpeg',
+                      bio='Kashmir, often stylized as KASHMIR, is an alternative rock band from Karachi, Pakistan. It is the winning band of Pepsi Battle of the Bands Season 2 in 2017. Formed in 2012, the band played for various shows across the country prior to PBOB.')
+
+    artist14 = Artist(name='Frank Ocean',
+                      img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/frank.jpeg',
+                      banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/frankocean.jpeg', bio='Frank Ocean (born Christopher Edwin Breaux, October 28, 1987) is an American singer, songwriter, record producer, photographer, and visual artist. Recognized for his idiosyncratic musical style, introspective and elliptical songwriting, and wide vocal range, Ocean is among the most acclaimed artists of his generation.')
 
     db.session.add(artist)
     db.session.add(artist2)
@@ -45,6 +66,13 @@ def seed_artists():
     db.session.add(artist5)
     db.session.add(artist6)
     db.session.add(artist7)
+    db.session.add(artist8)
+    db.session.add(artist9)
+    db.session.add(artist10)
+    db.session.add(artist11)
+    db.session.add(artist12)
+    db.session.add(artist13)
+    db.session.add(artist14)
 
     db.session.commit()
 
