@@ -8,7 +8,7 @@ import { authenticate } from "./store/session";
 import Home from './components/Home'
 import ArtistPage from "./components/ArtistPage";
 import Player from './components/Player'
-
+import * as songActions from './store/songs'
 function App() {
   const dispatch = useDispatch()
   const [authenticated, setAuthenticated] = useState(false);
@@ -27,7 +27,8 @@ function App() {
         setAuthenticated(true);
       }
       setLoaded(true);
-      // const songs = await dispatch(songActions.getSongs())
+      // const songs = await
+      dispatch(songActions.getSongs())
       // setQ({...songs, currentSong: null})
       // dispatch(artistActions.getAllArtists())
       // dispatch(artistPageActions.getArtistSongs(artist_id))
@@ -43,6 +44,8 @@ if (!loaded) {
       <NavBar
             authenticated={authenticated}
             setAuthenticated={setAuthenticated}
+            q={q}
+            setQ={setQ}
       />
       <Switch>
         <Route path="/login"

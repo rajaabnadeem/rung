@@ -4,7 +4,7 @@ import LogoutButton from '../../components/auth/LogoutButton';
 import Search from '../Search'
 import './NavBar.css';
 
-const NavBar = ( { authenticated, setAuthenticated } ) => {
+const NavBar = ( { authenticated, setAuthenticated, q, setQ } ) => {
 
 if (authenticated) {
     return (
@@ -16,9 +16,13 @@ if (authenticated) {
             </div>
                 { authenticated &&
                 <div className='logout__container'>
-                    <Search/>
+                    <Search q={q}
+                            setQ={setQ} />
                     <div className='logout'>
-                        <LogoutButton setAuthenticated={setAuthenticated}/>
+                        <LogoutButton
+                            setAuthenticated={setAuthenticated}
+                            q={q}
+                            setQ={setQ} />
                     </div>
                 </div>
                 }

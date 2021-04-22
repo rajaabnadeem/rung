@@ -1,43 +1,58 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'
 import './Search.css';
-const Search = () => {
+
+
+const Search = ({q, setQ}) => {
 
     const [searchTerm, setSearchTerm] = useState('')
 
     const artists = useSelector(state => Object.values(state.artists.allArtists))
     const songs = useSelector(state => Object.values(state.songs))
-    // console.log('artists', artists)
-    // console.log('songs', songs)
 
     let artistResults = artists.filter(artist => artist.name.toLowerCase().includes(searchTerm.toLowerCase()))
     let songResults = songs.filter(song =>
         song.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
 
+    const play = ( currentSong ) => {
+        const currentId = currentSong.id
+        if (q.currentSong) {q.currentSong.audio.pause()}
+        let audio = new Audio(currentSong.url)
+        setQ({ ...q, currentSong: {currentId, audio}, isPlaying:true })
+        audio.play()
+    }
+
+
     const handleChange = (event) => {
         setSearchTerm(event.target.value)
     }
 
+
     return (
-        <div>
-            <input
+        <div className='searchbar__container'>
+            <input className='searchbar__input'
                 className ='searchbar'
                 value={searchTerm}
-                onChange={handleChange}>
+                onChange={handleChange}
+                placeholder='Find your favorite songs'>
             </input>
             <div className='search__results'>
                 {searchTerm &&
                     artistResults.map(artist => (
-                        <Link className = 'artist__link' to={`/artists/${artist.id}`}>
-                            <div className='artist__link'>{artist.name}</div>
-                        </Link>
+                        <a className='artistlink' href={`/artists/${artist.id}`}>
+                            <div className='artistlink__name'>{artist.name}</div>
+                            <div className='searchbar__type'> artist</div>
+                        </a>
                     ))}
 
                 {searchTerm &&
                     songResults.map(song => (
-                        <div className ='song__link'>{song.name}</div>
+                        <div className='songlink' onClick={() => play(song)}>
+                            <div className='songlink__name'>{song.name}</div>
+                            <div classname='songlink__artistname'>{song.artist_name}</div>
+                            <div className='searchbar__type'>song</div>
+                        </div>
                     ))}
             </div>
         </div>

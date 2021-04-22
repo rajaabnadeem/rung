@@ -13,8 +13,6 @@ const ArtistPage = ({q, setQ}) => {
     const artist_id = useParams()
     const artist = useSelector(state => state?.artists?.artist)
     const songs = useSelector(state => state?.artists?.artist?.songs)
-    console.log(artist.name)
-    console.log('qqqqqq', q)
 
   // useEffect(async () => {
   //       await dispatch(artistPageActions.getArtistData(artist_id))

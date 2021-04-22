@@ -1,29 +1,49 @@
-.searchbar {
-  display: flex;
-  flex-direction: column;
-  color: orange;
-  background-color: black;
-  width: 20vw;
-  height: 4vh;
-  margin-right: 2vw;
-}
-
-.artist__link {
-  display: flex;
-  flex-direction: column;
-
-  color: orange;
-  background-color: black;
-  width: 20vw;
-  height: 4vh;
-}
-
-.song__link {
-  display: flex;
-  flex-direction: column;
-  color: orange;
-  background-color: black;
-  width: 20vw;
-  height: 4vh;
+.searchbar__container {
   z-index: 1000;
+}
+
+.searchbar {
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  color: #ff8c00;
+  background-color: rgb(20, 20, 20);
+  width: 30vw;
+  height: 4.5vh;
+  box-shadow: none;
+  border: 1px solid rgb(80, 80, 80);
+  font-size: 15pt;
+}
+
+.search__results {
+  height: 5vh;
+}
+
+.artistlink,
+.songlink {
+  display: flex;
+  justify-content: space-between;
+  color: #ff8c00;
+  font-size: 15pt;
+  text-decoration: none;
+  background-color: rgb(20, 20, 20);
+  border-bottom: 1px solid rgb(80, 80, 80);
+  border-radius: 5px;
+}
+
+.artistlink__name,
+.songlink__name {
+  margin-left: 1vw;
+}
+
+.songlink__artistname {
+  font-size: 10pt;
+}
+
+.searchbar__type {
+  color: rgb(150, 150, 150);
+  margin-right: 1vw;
+  font-size: 10pt;
+  margin-top: 1vh;
 }

@@ -11,8 +11,6 @@ const Song = ({q, setQ, allSongs:state}) => {
         audio.play()
     }
 
-
-
     const timeFunction = (song) => {
         const minutes =  Math.floor(song.length / 60);
         let seconds = (Math.floor(Math.floor(song.length)) - (Math.floor(song.length / 60)) * 60);
@@ -28,17 +26,17 @@ const Song = ({q, setQ, allSongs:state}) => {
                     <div className = 'song_artist'>Artist</div>
                     <div className = 'song_length'>Length</div>
             </div>
-                { (Object.values(state).length > 0) && Object.values(state).map(song => (
+                { (Object.values(state).length > 0) && Object.values(state).map((song, song_id=1) => (
                     <>
-                    <div className = 'hr'><hr/></div>
-                    <div onClick={() => play(song)} className = 'single__song'>
-                        <div className ='id'>{song.id}</div>
-                        <div className = 'name'>{song.name}</div>
-                        <div className = 'artist'>{song.artist_name}</div>
-                        <div className = 'duration'>
-                            { timeFunction(song) }
+                        <div className = 'hr'><hr/></div>
+                        <div onClick={() => play(song)} className = 'single__song'>
+                            <div className ='id'>{++song_id}</div>
+                            <div className = 'name'>{song.name}</div>
+                            <div className = 'artist'>{song.artist_name}</div>
+                            <div className = 'duration'>
+                                { timeFunction(song) }
+                            </div>
                         </div>
-                    </div>
                     </>
                 ))}
             </div>

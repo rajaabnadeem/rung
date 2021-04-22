@@ -64,25 +64,25 @@ def seed_songs():
     song26 = Song(name="Najanay Kyun", length=498, artist_id=9,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Strings+-+Najanay+Kyun.mp3')
 
-    song27 = Song(name='Jo Meray', length=327, artist_id=4,
+    song27 = Song(name='Jo Meray', length=327, artist_id=11,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Noori+-+Jo+Meray.mp3')
-    song28 = Song(name='Manwa Re', length=217, artist_id=4,
+    song28 = Song(name='Manwa Re', length=217, artist_id=11,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Noori+-+Manwa+Re.mp3')
-    song29 = Song(name='Paar Chanaa De', length=675, artist_id=4,
+    song29 = Song(name='Paar Chanaa De', length=675, artist_id=11,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Noori+-+Paar+Chanaa+De.mp3')
-    song30 = Song(name='Saari Raat', length=444, artist_id=4,
+    song30 = Song(name='Saari Raat', length=444, artist_id=11,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Noori+-+Saari+Raat.mp3')
-    song31 = Song(name="Kuttay", length=151, artist_id=4,
+    song31 = Song(name="Kuttay", length=151, artist_id=11,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Noori+-+Kuttay.mp3')
-    song32 = Song(name="Dil Ki Qasam", length=328, artist_id=4,
+    song32 = Song(name="Dil Ki Qasam", length=328, artist_id=11,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Noori+-+Dil+Ki+Qasam.mp3')
     song33 = Song(name="Suno Ke Mein Houn Jawan",
-                  length=231, artist_id=4, url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Noori+-+Suno+Ke+Mein+Hun+Jawan.mp3')
-    song34 = Song(name="Nishaan", length=221, artist_id=4,
+                  length=231, artist_id=11, url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Noori+-+Suno+Ke+Mein+Hun+Jawan.mp3')
+    song34 = Song(name="Nishaan", length=221, artist_id=11,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Noori+-+Nishaan.mp3')
-    song35 = Song(name="Do Dil", length=307, artist_id=4,
+    song35 = Song(name="Do Dil", length=307, artist_id=11,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Noori+-+Do+Dil.mp3')
-    song36 = Song(name="Tum Hans Diye", length=287, artist_id=4,
+    song36 = Song(name="Tum Hans Diye", length=287, artist_id=11,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Noori+-+Tum+Hans+Diye.mp3')
 
     song37 = Song(name='Chan Kithan', length=332, artist_id=5,
@@ -147,15 +147,15 @@ def seed_songs():
     song64 = Song(name='Neend Aati Nahin (Cover)',
                   length=268, artist_id=10, url='')
 
-    song65 = Song(name='AFSANAY', length=390, artist_id=11,
+    song65 = Song(name='AFSANAY', length=390, artist_id=4,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Young+Stunners+-+AFSANAY.mp3')
-    song66 = Song(name="DON'T MIND", length=195, artist_id=11,
+    song66 = Song(name="DON'T MIND", length=195, artist_id=4,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Young+Stunners+-+DONT+MIND.mp3')
-    song67 = Song(name='GUMAAN', length=272, artist_id=11,
+    song67 = Song(name='GUMAAN', length=272, artist_id=4,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Young+Stunners+-+GUMAAN.mp3')
-    song68 = Song(name='LAGA REH', length=254, artist_id=11,
+    song68 = Song(name='LAGA REH', length=254, artist_id=4,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Young+Stunners+-+LAGA+REH.mp3')
-    song69 = Song(name='QUARANTINE', length=260, artist_id=11,
+    song69 = Song(name='QUARANTINE', length=260, artist_id=4,
                   url='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/songs/Young+Stunners+-+QUARANTINE.mp3')
 
     song70 = Song(name='Aaj Bazaar Mein', length=273, artist_id=12,

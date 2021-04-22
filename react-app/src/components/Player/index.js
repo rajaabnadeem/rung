@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Player.css'
 
 const Player = ({q, setQ}) => {
@@ -7,6 +7,11 @@ const Player = ({q, setQ}) => {
     const [previousVolume, setPreviousVolume] =  useState()
     const [muted, setMuted] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)
+    const [clearAutoplay, setClearAutoplay] = useState()
+
+    useEffect(() =>{
+        autoPlay()
+    }, [q.currentSong])
 
     const play = ( currentSong ) => {
 
@@ -73,9 +78,20 @@ const Player = ({q, setQ}) => {
     }
 
     const changeTime =  ( event )  => {
-        //  setCurrentTime(event.target.valueAsNumber)
          q.currentSong.audio.currentTime = event.target.valueAsNumber
     }
+
+    const autoPlay = () => {
+        if (q.currentSong) {
+        const autoplayInterval = setInterval(() => {
+            // debugger
+            if (q.currentSong.audio.currentTime == q.currentSong.audio.duration) {
+                skip(q.currentSong)
+                clearInterval(autoplayInterval)
+            }
+        }, 1000)
+    }
+}
 
     // const timeFunction = (song) => {
     //     const minutes =  Math.floor(song.length / 60);
