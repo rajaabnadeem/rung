@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import React from 'react'
 import './Song.css'
 
 const Song = ({q, setQ, allSongs:state}) => {
-
-    // const state = useSelector(state => Object.values(state.songs))
 
     const play = ( currentSong ) => {
         const currentId = currentSong.id
@@ -19,7 +16,6 @@ const Song = ({q, setQ, allSongs:state}) => {
     const timeFunction = (song) => {
         const minutes =  Math.floor(song.length / 60);
         let seconds = (Math.floor(Math.floor(song.length)) - (Math.floor(song.length / 60)) * 60);
-        console.log(seconds)
         if (seconds < 10) { seconds = "0" + seconds;}
         return minutes+':'+seconds;
     }
@@ -37,8 +33,7 @@ const Song = ({q, setQ, allSongs:state}) => {
                     <div className = 'hr'><hr/></div>
                     <div onClick={() => play(song)} className = 'single__song'>
                         <div className ='id'>{song.id}</div>
-                        <div className = 'name'>{song.name}
-                        </div>
+                        <div className = 'name'>{song.name}</div>
                         <div className = 'artist'>{song.artist_name}</div>
                         <div className = 'duration'>
                             { timeFunction(song) }

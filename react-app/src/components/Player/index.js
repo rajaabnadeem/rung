@@ -7,8 +7,6 @@ const Player = ({q, setQ}) => {
     const [previousVolume, setPreviousVolume] =  useState()
     const [muted, setMuted] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)
-    const [song, setSong] = useState()
-
 
     const play = ( currentSong ) => {
 

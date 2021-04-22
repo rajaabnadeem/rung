@@ -15,10 +15,15 @@
   background-color: rgb(190, 190, 190);
   color: white;
   box-sizing: border-box;
+  position: relative;
   display: flex;
-  margin: 30px 200px 0px 200px;
-  padding-bottom: 120px;
+  margin: 0 auto;
   opacity: 0.94;
+  height: 75vh;
+  width: 80vw;
+  top: 6vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .left__content {
@@ -26,29 +31,31 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  left: 125px;
-  top: 45px;
   color: black;
-  padding-right: 112px;
-  border-right: 1px solid black;
+  /* border-right: 1px solid black; */
+  justify-content: center;
+}
+
+.left__content,
+.right__content {
+  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-start;
+  height: 70vh;
 }
 
 .right__content {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-left: 240px;
   color: black;
-  height: 400px;
+  margin-top: 10%;
 }
 
 .logo__img {
   height: 260px;
   width: 260px;
-  margin-left: 20px;
-  margin-top: -40px;
   color: white;
-  margin-bottom: -15px;
 }
 
 .email-label,
@@ -86,12 +93,16 @@
   color: black;
   width: 275px;
   text-align: right;
-  margin-left: 5px;
 }
 
 .loginform__header {
   font-size: 17pt;
   font-weight: 900;
-  margin-left: 20px;
-  margin-bottom: 3px;
+}
+
+.pipe {
+  min-width: 0;
+  max-width: 0;
+  border-right: 1px solid black;
+  height: 55vh;
 }

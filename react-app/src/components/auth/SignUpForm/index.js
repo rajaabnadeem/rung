@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useSelector } from 'react';
-import { Redirect, useHistory, NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../../store/session';
 import './SignUpForm.css'

@@ -14,10 +14,8 @@ def seed_artists():
                      banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/bilalkhan.jpeg',
                      bio='Bilal Khan is a Pakistani musician, actor, and YouTuber. He released his debut album Umeed in 2009. Singles released included "Bachana", "Tou Kia Hua", "Larho Mujhey", "Kabhi Gham Na Aey", and Mata-e-Jaan Hai Tu. In 2012, he has been nominated for Best Album at the 11th Lux Style Awards for the album "Umeed". Khan holds a BSc (Hons) degree in Politics and Economics from Lahore University of Management Sciences (LUMS) and later studied from Virginia Commonwealth University.')
 
-    artist3 = Artist(name='Strings',
-                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/strings.jpeg',
-                     banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/strings.jpeg',
-                     bio='Strings are a Pakistani pop/rock band composed of two members, plus four live band members from Karachi, Pakistan. The band was initially formed by four college students—Bilal Maqsood (vocals and guitars), Faisal Kapadia (vocals), Rafiq Wazir Ali (synthesizer) and Kareem Bashir Bhoy (bass guitar)—in 1988.In 1992 the quartet disbanded, only to make a comeback with Maqsood and Kapadia in 2000. While the initial band rode the new wave of Pakistani pop music, the later lineup ushered a revival in the Pakistani music industry.')
+    artist3 = Artist(name='Maanu', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/maanu.jpeg', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/maanu_banner.jpeg',
+                     bio='Now Maanu, aka Rehman Afshar, is releasing each track from his new album ‘Yain City’. The album seeks to give Lahore a new musical identity, with the yain representing both the excitement and the chaos of the city. Afshar depicts this dichotomy by splitting himself into an alter ego: on these songs there’s Maanu – the more mature young adult – and then there’s Chotus, an angsty chaotic force, brimming with discontent.')
 
     artist4 = Artist(name='Noori',
                      img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/noori.jpeg',
@@ -29,19 +27,21 @@ def seed_artists():
                      banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/alisethi.jpeg',
                      bio='Ali Sethi is a Pakistani writer and musician. Sethi was globally recognized for his debut novel, The Wish Maker, published in 2009. In 2013, he began focusing on his music career and made his film debut as a singer in The Reluctant Fundamentalist (2013). Later, he released numerous cover singles, and appeared on several seasons of the series Coke Studio. Sethi began releasing original music in 2019, and collaborated with producer Noah Georgeson.')
 
-    artist6 = Artist(name='Faris Shafi',
-                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/farisshafi.jpeg',
-                     banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/farisshafi.jpeg',
-                     bio="Faris Shafi is a Pakistani rapper and artist. His singles Jawab De and Awaam are very popular song amongst his fans. He has also done projects like Sprite ad's play back singer/rapper and Roar playback singer/rapper.")
+    artist6 = Artist(name='Poor Rich Boy', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/poorrichboy.jpeg', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/poorrichboy_banner.jpeg',
+                     bio='Poor Rich Boy, Pakistan’s underground indie-art rock phenomenon, conjures the strangeness of everyday life in a society where expressing one’s inner world can be both a cathartic and subtly rebellious act. Enigmatic and layered, the band’s striking vocals, atmospheric sounds, and the occasional kazoo create a crystalline sound that suggests, but rarely reveals.')
 
     artist7 = Artist(name='Mooroo', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/mooroo.png', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/mooroo__banner.png',
                      bio='Taimoor Salahuddin, who is better known by his stage name Mooroo, is a Pakistani YouTuber and musician. Born in Lahore, Pakistan, he is ethnically Chinioti. He received his education from various institutions in Pakistan and North America and upon completion of his Bachelors of Science in Film Production concluded his academic quandary. Based in Karachi, Pakistan Mooroo, now runs a Production House, and is an Editor, Cinematographer, Director, Colorist, Producer, Composer and a Musician.')
 
-    artist8 = Artist(name='Poor Rich Boy', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/poorrichboy.jpeg', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/poorrichboy_banner.jpeg',
-                     bio='Poor Rich Boy, Pakistan’s underground indie-art rock phenomenon, conjures the strangeness of everyday life in a society where expressing one’s inner world can be both a cathartic and subtly rebellious act. Enigmatic and layered, the band’s striking vocals, atmospheric sounds, and the occasional kazoo create a crystalline sound that suggests, but rarely reveals.')
+    artist8 = Artist(name='Faris Shafi',
+                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/farisshafi.jpeg',
+                     banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/farisshafi.jpeg',
+                     bio="Faris Shafi is a Pakistani rapper and artist. His singles Jawab De and Awaam are very popular song amongst his fans. He has also done projects like Sprite ad's play back singer/rapper and Roar playback singer/rapper.")
 
-    artist9 = Artist(name='Maanu', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/maanu.jpeg', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/maanu_banner.jpeg',
-                     bio='Now Maanu, aka Rehman Afshar, is releasing each track from his new album ‘Yain City’. The album seeks to give Lahore a new musical identity, with the yain representing both the excitement and the chaos of the city. Afshar depicts this dichotomy by splitting himself into an alter ego: on these songs there’s Maanu – the more mature young adult – and then there’s Chotus, an angsty chaotic force, brimming with discontent.')
+    artist9 = Artist(name='Strings',
+                     img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/strings.jpeg',
+                     banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/strings.jpeg',
+                     bio='Strings are a Pakistani pop/rock band composed of two members, plus four live band members from Karachi, Pakistan. The band was initially formed by four college students—Bilal Maqsood (vocals and guitars), Faisal Kapadia (vocals), Rafiq Wazir Ali (synthesizer) and Kareem Bashir Bhoy (bass guitar)—in 1988.In 1992 the quartet disbanded, only to make a comeback with Maqsood and Kapadia in 2000. While the initial band rode the new wave of Pakistani pop music, the later lineup ushered a revival in the Pakistani music industry.')
 
     artist10 = Artist(name='Imam Hamdani', img='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/artist_img/hamdani.jpeg', banner='https://rung-dev.s3.ap-south-1.amazonaws.com/seed/banners/hamdani_banner.jpeg',
                       bio="Imam Hamdani, a guitar player and songwriter from Karachi, Pakistan first came onto the scene via Uth Records in 2012. The following year he formed his own band 'Teeen' with Sara Haider and Ahsan Ghulam Haider. From 2015 to 2017 he attended Berklee College Of Music. Currently he is working on his first solo E.P. His music can be described as a blend of Pop, Blues and Indie music.")

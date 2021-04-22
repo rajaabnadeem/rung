@@ -7,11 +7,13 @@ import * as songActions from '../../store/songs'
 
 const Home = ({q, setQ}) => {
 
-    const artists = useSelector(state => Object.values(state.artists))
+    // const artists = useSelector(state => Object.values(state.artists))
+    // const songs = useSelector(state => Object.values)
     const dispatch = useDispatch()
     useEffect(async () => {
         const songs = await dispatch(songActions.getSongs())
-        setQ({...songs, currentSong: null})    }, [dispatch])
+        setQ({...songs, currentSong: null})
+    }, [dispatch])
 
     const allSongs = useSelector(state => (state.songs))
 

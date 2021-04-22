@@ -24,14 +24,14 @@ export const getArtistData = ({artist_id}) => async (dispatch) => {
     return data
 }
 
-const initialState = {}
+const initialState = {allArtists:{},artist:{} }
 
 const artistsReducer = (state = initialState, action) => {
         switch (action.type) {
             case LOAD_ARTISTS:
-                return  { ...state, ...action.artists }
+                return  { ...state, allArtists:{...action.artists }}
             case LOAD_ARTIST_DATA:
-                return { ...state,  ...action.artistData }
+                return { ...state,  artist:{...action.artistData }}
             default:
                 return state
         }

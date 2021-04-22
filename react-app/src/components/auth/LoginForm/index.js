@@ -96,6 +96,7 @@ const onLogin = async (e) => {
                         </form>
                     </div>
                 </div>
+                <div className = 'pipe'></div>
                 <div className = 'right__content'>
                     <SignUpForm authenticated={authenticated}
                                 setAuthenticated={setAuthenticated}/>

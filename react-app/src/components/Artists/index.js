@@ -2,25 +2,19 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import * as artistActions from '../../store/artists'
 import './Artists.css'
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Image } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel, CarouselProvider } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Artists = () => {
-    const artists = useSelector(state => Object.values(state.artists))
+    const artists = useSelector(state => Object.values(state.artists.allArtists))
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(artistActions.getAllArtists())
-
     }, [dispatch])
 
-    const carousel = (artists) => {
-        console.log('//////////',artists)
-    }
 
-carousel()
     return (
              <div className = 'artist__info'>
                  <CarouselProvider

@@ -11,8 +11,10 @@
 
 .artistpage__banner {
   display: flex;
-  width: 70%;
-  height: 400px;
+  max-width: 60vw;
+  width: auto;
+  height: auto;
+  max-height: 50vh;
   justify-content: center;
   margin: 0 auto;
 }

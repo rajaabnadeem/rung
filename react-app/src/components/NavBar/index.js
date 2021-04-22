@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../images/logo.png'
 import LogoutButton from '../../components/auth/LogoutButton';
+import Search from '../Search'
 import './NavBar.css';
 
 const NavBar = ( { authenticated, setAuthenticated } ) => {
@@ -15,6 +16,7 @@ if (authenticated) {
             </div>
                 { authenticated &&
                 <div className='logout__container'>
+                    <Search/>
                     <div className='logout'>
                         <LogoutButton setAuthenticated={setAuthenticated}/>
                     </div>

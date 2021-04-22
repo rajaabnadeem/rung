@@ -1,0 +1,29 @@
+.searchbar {
+  display: flex;
+  flex-direction: column;
+  color: orange;
+  background-color: black;
+  width: 20vw;
+  height: 4vh;
+  margin-right: 2vw;
+}
+
+.artist__link {
+  display: flex;
+  flex-direction: column;
+
+  color: orange;
+  background-color: black;
+  width: 20vw;
+  height: 4vh;
+}
+
+.song__link {
+  display: flex;
+  flex-direction: column;
+  color: orange;
+  background-color: black;
+  width: 20vw;
+  height: 4vh;
+  z-index: 1000;
+}
