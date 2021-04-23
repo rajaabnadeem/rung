@@ -1,10 +1,14 @@
+.search {
+  display: block;
+  height: 10vh;
+}
+
 .searchbar__container {
   z-index: 1000;
 }
 
 .searchbar {
-  border-radius: 5px;
-
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
   color: #ff8c00;
@@ -17,6 +21,7 @@
 }
 
 .search__results {
+  display: block;
   height: 5vh;
 }
 
@@ -29,7 +34,7 @@
   text-decoration: none;
   background-color: rgb(20, 20, 20);
   border-bottom: 1px solid rgb(80, 80, 80);
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .artistlink__name,
@@ -46,4 +51,13 @@
   margin-right: 1vw;
   font-size: 10pt;
   margin-top: 1vh;
+}
+
+.searchbar__artistname {
+  display: flex;
+  color: rgb(150, 150, 150);
+  margin-right: 1vw;
+  font-size: 11pt;
+  margin-top: 1vh;
+  justify-content: flex-start;
 }

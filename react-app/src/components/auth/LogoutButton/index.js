@@ -8,7 +8,9 @@ const LogoutButton = ({setAuthenticated, q, setQ}) => {
     const onLogout = async (e) => {
     await dispatch(logout());
     setAuthenticated(false);
-    q.currentSong.audio.pause()
+    if (q.currentSong){
+      q.currentSong.audio.pause()
+    }
     setQ({ ...q, currentSong: null, isPlaying:false })
 
 

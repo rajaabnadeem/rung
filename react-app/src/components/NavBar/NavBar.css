@@ -27,8 +27,15 @@ img {
   height: 80px;
 }
 
-.logout__container {
+.logout {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  margin-right: 1.5vw;
+  margin-top: 3vh;
+}
+
+.search {
+  display: flex;
+  margin-left: 2vw;
+  margin-top: 2vh;
 }

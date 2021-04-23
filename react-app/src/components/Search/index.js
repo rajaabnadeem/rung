@@ -50,7 +50,7 @@ const Search = ({q, setQ}) => {
                     songResults.map(song => (
                         <div className='songlink' onClick={() => play(song)}>
                             <div className='songlink__name'>{song.name}</div>
-                            <div classname='songlink__artistname'>{song.artist_name}</div>
+                            <div className='searchbar__artistname'>by {song.artist_name}</div>
                             <div className='searchbar__type'>song</div>
                         </div>
                     ))}
