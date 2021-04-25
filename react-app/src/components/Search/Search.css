@@ -22,7 +22,9 @@
 
 .search__results {
   display: block;
-  height: 5vh;
+  /* min-height: 50vh; */
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 .artistlink,

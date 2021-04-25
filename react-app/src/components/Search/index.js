@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import './Search.css';
 
@@ -6,6 +6,7 @@ import './Search.css';
 const Search = ({q, setQ}) => {
 
     const [searchTerm, setSearchTerm] = useState('')
+    const [magGlass, setMagGlass] = useState(true)
 
     const artists = useSelector(state => Object.values(state.artists.allArtists))
     const songs = useSelector(state => Object.values(state.songs))
@@ -28,14 +29,35 @@ const Search = ({q, setQ}) => {
         setSearchTerm(event.target.value)
     }
 
+    const showSearch = () => {
+        setMagGlass(false)
+        console.log('im here')
+    }
+
+    const hideSearch = () => {
+        setMagGlass(true)
+        console.log('not here')
+    }
+
+    useEffect(() => {
+        if (!magGlass) document.addEventListener('click', hideSearch)
+        return () => {
+            document.removeEventListener('click', hideSearch)
+        }
+    }, [magGlass] )
 
     return (
-        <div className='searchbar__container'>
+        <div className='searchbar__container'
+        onClick = {e => e.stopPropagation()}
+        >
+                {!magGlass ? (
+                    <>
             <input className='searchbar__input'
                 className ='searchbar'
                 value={searchTerm}
                 onChange={handleChange}
-                placeholder='Find your favorite songs'>
+                placeholder='Find your favorite songs'
+                >
             </input>
             <div className='search__results'>
                 {searchTerm &&
@@ -53,8 +75,17 @@ const Search = ({q, setQ}) => {
                             <div className='searchbar__artistname'>by {song.artist_name}</div>
                             <div className='searchbar__type'>song</div>
                         </div>
-                    ))}
+                        ))}
             </div>
+                        </>
+                    ) : (
+                        <>
+                            <h1 onClick={showSearch}>MAG GLASS</h1>
+                        </>
+                    )
+                }
+
+
         </div>
     )
 }
