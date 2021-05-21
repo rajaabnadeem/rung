@@ -12,12 +12,13 @@
   display: flex;
   flex-direction: column;
   color: #ff8c00;
-  background-color: rgb(20, 20, 20);
-  width: 30vw;
+  background-color: rgb(40, 40, 40);
+  width: 25vw;
   height: 4.5vh;
   box-shadow: none;
   border: 1px solid rgb(80, 80, 80);
   font-size: 15pt;
+  margin-top: 1vh;
 }
 
 .search__results {
@@ -62,4 +63,13 @@
   font-size: 11pt;
   margin-top: 1vh;
   justify-content: flex-start;
+}
+
+.mag__glass {
+  width: 20vw;
+}
+
+.searchbar__container ::placeholder {
+  margin-left: 2vw;
+  color: white;
 }

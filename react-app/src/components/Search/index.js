@@ -80,7 +80,11 @@ const Search = ({q, setQ}) => {
                         </>
                     ) : (
                         <>
-                            <h1 onClick={showSearch}>MAG GLASS</h1>
+                            <div className='mag__glass'>
+                                <h1 onClick={showSearch}>
+                                    <i class="fas fa-search"></i>
+                                </h1>
+                            </div>
                         </>
                     )
                 }
