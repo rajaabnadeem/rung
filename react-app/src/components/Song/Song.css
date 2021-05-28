@@ -1,56 +1,7 @@
 .song__container {
   background-color: rgb(35, 35, 35);
-  /* padding-right: 10px;
-  padding-left: 10px; */
-  padding-right: 1vw;
   height: 600px;
   overflow: scroll;
-}
-
-.single__song {
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: baseline;
-  justify-content: space-between;
-  color: white;
-  font-size: 14pt;
-}
-.hr {
-  display: flex;
-  justify-content: center;
-}
-
-.hr hr {
-  height: 1px;
-  border: none;
-  background-color: #bd6801;
-  width: 97%;
-}
-
-.name {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 210px;
-  text-align: center;
-}
-
-.artist,
-.length,
-.id {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 150px;
-  text-align: center;
-}
-
-.name,
-.artist {
-  margin-right: 120px;
-}
-
-.length {
-  justify-content: end;
 }
 
 .navbar__song {
@@ -65,6 +16,61 @@
   margin-left: 68px;
 }
 
+.hover_div :hover {
+  background-color: rgb(185, 103, 2);
+  color: black;
+  font-weight: 900;
+  height: 7vh;
+}
+
+.single__song {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 14pt;
+  cursor: pointer;
+  height: 6vh;
+}
+.single__song :hover {
+  top: 5vh;
+  bottom: 5vh;
+}
+
+.hr {
+  display: flex;
+  justify-content: center;
+}
+
+.hr hr {
+  height: 1px;
+  border: none;
+  background-color: #bd6801;
+  width: 97%;
+}
+
+.duration {
+  padding-right: 8px;
+}
+
+.name {
+  width: 210px;
+  text-align: center;
+}
+
+.artist,
+.length,
+.id {
+  width: 150px;
+  text-align: center;
+}
+
+.name,
+.artist {
+  margin-right: 120px;
+}
+
 .song_id {
   margin-right: 8px;
 }
@@ -73,6 +79,15 @@
   margin-left: 105px;
 }
 
-.hidden_id {
-  visibility: hidden;
+.name :hover,
+.artist :hover,
+.duration :hover,
+.id :hover {
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.single__song :hover {
+  height: 55%;
+  /* height: 3.7vh; */
 }

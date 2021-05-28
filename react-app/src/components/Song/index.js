@@ -29,13 +29,16 @@ const Song = ({q, setQ, allSongs:state}) => {
                 { (Object.values(state).length > 0) && Object.values(state).map((song, song_id=1) => (
                     <>
                         <div className = 'hr'><hr/></div>
+                        <div className='hover_div'>
                         <div onClick={() => play(song)} className = 'single__song'>
                             <div className ='id'>{++song_id}</div>
                             <div className = 'name'>{song.name}</div>
                             <div className = 'artist'>{song.artist_name}</div>
                             <div className = 'duration'>
                                 { timeFunction(song) }
-                            </div>
+                                <div></div>
+                        </div>
+                        </div>
                         </div>
                     </>
                 ))}
